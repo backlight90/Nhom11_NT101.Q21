@@ -40,10 +40,11 @@
             TbCtrl_Algorithms.Controls.Add(Tab_PlayFair);
             TbCtrl_Algorithms.Controls.Add(Tab_RSA);
             TbCtrl_Algorithms.Controls.Add(Tab_Vigenere);
+            TbCtrl_Algorithms.Dock = DockStyle.Fill;
             TbCtrl_Algorithms.Location = new Point(0, 0);
             TbCtrl_Algorithms.Name = "TbCtrl_Algorithms";
             TbCtrl_Algorithms.SelectedIndex = 0;
-            TbCtrl_Algorithms.Size = new Size(1421, 1012);
+            TbCtrl_Algorithms.Size = new Size(1374, 1005);
             TbCtrl_Algorithms.TabIndex = 0;
             // 
             // Tab_PlayFair
@@ -51,7 +52,7 @@
             Tab_PlayFair.Location = new Point(8, 46);
             Tab_PlayFair.Name = "Tab_PlayFair";
             Tab_PlayFair.Padding = new Padding(3);
-            Tab_PlayFair.Size = new Size(1405, 958);
+            Tab_PlayFair.Size = new Size(1358, 951);
             Tab_PlayFair.TabIndex = 0;
             Tab_PlayFair.Text = "PlayFair";
             Tab_PlayFair.UseVisualStyleBackColor = true;
@@ -61,7 +62,7 @@
             Tab_RSA.Location = new Point(8, 46);
             Tab_RSA.Name = "Tab_RSA";
             Tab_RSA.Padding = new Padding(3);
-            Tab_RSA.Size = new Size(1405, 958);
+            Tab_RSA.Size = new Size(1358, 951);
             Tab_RSA.TabIndex = 1;
             Tab_RSA.Text = "RSA";
             Tab_RSA.UseVisualStyleBackColor = true;
@@ -71,7 +72,7 @@
             Tab_Vigenere.Location = new Point(8, 46);
             Tab_Vigenere.Name = "Tab_Vigenere";
             Tab_Vigenere.Padding = new Padding(3);
-            Tab_Vigenere.Size = new Size(1405, 958);
+            Tab_Vigenere.Size = new Size(1358, 951);
             Tab_Vigenere.TabIndex = 2;
             Tab_Vigenere.Text = "Vigenère";
             Tab_Vigenere.UseVisualStyleBackColor = true;
@@ -80,9 +81,10 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1433, 1010);
+            ClientSize = new Size(1374, 1005);
             Controls.Add(TbCtrl_Algorithms);
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Main Form";
             TbCtrl_Algorithms.ResumeLayout(false);
             ResumeLayout(false);
