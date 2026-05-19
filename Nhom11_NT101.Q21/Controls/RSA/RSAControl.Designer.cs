@@ -357,7 +357,7 @@
             Rtb_Result.Location = new Point(34, 539);
             Rtb_Result.Name = "Rtb_Result";
             Rtb_Result.ReadOnly = true;
-            Rtb_Result.Size = new Size(1220, 333);
+            Rtb_Result.Size = new Size(1229, 333);
             Rtb_Result.TabIndex = 58;
             Rtb_Result.Text = "";
             // 
@@ -382,7 +382,7 @@
             Gb_KeyInput.Controls.Add(Lbl_KeyInput);
             Gb_KeyInput.Location = new Point(610, 38);
             Gb_KeyInput.Name = "Gb_KeyInput";
-            Gb_KeyInput.Size = new Size(644, 334);
+            Gb_KeyInput.Size = new Size(653, 334);
             Gb_KeyInput.TabIndex = 56;
             Gb_KeyInput.TabStop = false;
             Gb_KeyInput.Text = "Key Input";

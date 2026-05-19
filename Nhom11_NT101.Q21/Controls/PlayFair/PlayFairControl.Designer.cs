@@ -67,6 +67,8 @@
             Lbl_SrcTextInput = new Label();
             Btn_Paste = new Button();
             Rtb_SrcTextInput = new RichTextBox();
+            Rtb_KeyInput = new RichTextBox();
+            Lbl_KeyInput = new Label();
             Gb_KeyInput.SuspendLayout();
             Gb_KeyMatrix.SuspendLayout();
             Gb_TextInput.SuspendLayout();
@@ -114,6 +116,8 @@
             // 
             // Gb_KeyInput
             // 
+            Gb_KeyInput.Controls.Add(Rtb_KeyInput);
+            Gb_KeyInput.Controls.Add(Lbl_KeyInput);
             Gb_KeyInput.Controls.Add(Gb_KeyMatrix);
             Gb_KeyInput.Location = new Point(628, 31);
             Gb_KeyInput.Name = "Gb_KeyInput";
@@ -490,6 +494,24 @@
             Rtb_SrcTextInput.TabIndex = 56;
             Rtb_SrcTextInput.Text = "";
             // 
+            // Rtb_KeyInput
+            // 
+            Rtb_KeyInput.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Rtb_KeyInput.Location = new Point(116, 53);
+            Rtb_KeyInput.Name = "Rtb_KeyInput";
+            Rtb_KeyInput.Size = new Size(456, 48);
+            Rtb_KeyInput.TabIndex = 60;
+            Rtb_KeyInput.Text = "";
+            // 
+            // Lbl_KeyInput
+            // 
+            Lbl_KeyInput.AutoSize = true;
+            Lbl_KeyInput.Location = new Point(31, 61);
+            Lbl_KeyInput.Name = "Lbl_KeyInput";
+            Lbl_KeyInput.Size = new Size(58, 32);
+            Lbl_KeyInput.TabIndex = 58;
+            Lbl_KeyInput.Text = "Key:";
+            // 
             // PlayFairControl
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -504,6 +526,7 @@
             Name = "PlayFairControl";
             Size = new Size(1300, 1000);
             Gb_KeyInput.ResumeLayout(false);
+            Gb_KeyInput.PerformLayout();
             Gb_KeyMatrix.ResumeLayout(false);
             Gb_KeyMatrix.PerformLayout();
             Gb_TextInput.ResumeLayout(false);
@@ -560,5 +583,7 @@
         private Label Lbl_SrcTextInput;
         private Button Btn_Paste;
         private RichTextBox Rtb_SrcTextInput;
+        private RichTextBox Rtb_KeyInput;
+        private Label Lbl_KeyInput;
     }
 }
