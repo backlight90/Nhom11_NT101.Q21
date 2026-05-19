@@ -30,9 +30,15 @@
         {
             TbCtrl_Algorithms = new TabControl();
             Tab_PlayFair = new TabPage();
+            PlayFairControl = new Nhom11_NT101.Q21.Controls.PlayFair.PlayFairControl();
             Tab_RSA = new TabPage();
+            RSAControl = new Nhom11_NT101.Q21.Controls.RSA.RSAControl();
             Tab_Vigenere = new TabPage();
+            VigenereControl = new Nhom11_NT101.Q21.Controls.Vigenere.VigenereControl();
             TbCtrl_Algorithms.SuspendLayout();
+            Tab_PlayFair.SuspendLayout();
+            Tab_RSA.SuspendLayout();
+            Tab_Vigenere.SuspendLayout();
             SuspendLayout();
             // 
             // TbCtrl_Algorithms
@@ -40,51 +46,84 @@
             TbCtrl_Algorithms.Controls.Add(Tab_PlayFair);
             TbCtrl_Algorithms.Controls.Add(Tab_RSA);
             TbCtrl_Algorithms.Controls.Add(Tab_Vigenere);
+            TbCtrl_Algorithms.Dock = DockStyle.Fill;
             TbCtrl_Algorithms.Location = new Point(0, 0);
             TbCtrl_Algorithms.Name = "TbCtrl_Algorithms";
             TbCtrl_Algorithms.SelectedIndex = 0;
-            TbCtrl_Algorithms.Size = new Size(1421, 1012);
+            TbCtrl_Algorithms.Size = new Size(1374, 1005);
             TbCtrl_Algorithms.TabIndex = 0;
             // 
             // Tab_PlayFair
             // 
+            Tab_PlayFair.Controls.Add(PlayFairControl);
             Tab_PlayFair.Location = new Point(8, 46);
             Tab_PlayFair.Name = "Tab_PlayFair";
             Tab_PlayFair.Padding = new Padding(3);
-            Tab_PlayFair.Size = new Size(1405, 958);
+            Tab_PlayFair.Size = new Size(1358, 951);
             Tab_PlayFair.TabIndex = 0;
             Tab_PlayFair.Text = "PlayFair";
             Tab_PlayFair.UseVisualStyleBackColor = true;
             // 
+            // PlayFairControl
+            // 
+            PlayFairControl.Dock = DockStyle.Fill;
+            PlayFairControl.Location = new Point(3, 3);
+            PlayFairControl.Name = "PlayFairControl";
+            PlayFairControl.Size = new Size(1352, 945);
+            PlayFairControl.TabIndex = 0;
+            // 
             // Tab_RSA
             // 
+            Tab_RSA.Controls.Add(RSAControl);
             Tab_RSA.Location = new Point(8, 46);
             Tab_RSA.Name = "Tab_RSA";
             Tab_RSA.Padding = new Padding(3);
-            Tab_RSA.Size = new Size(1405, 958);
+            Tab_RSA.Size = new Size(1358, 951);
             Tab_RSA.TabIndex = 1;
             Tab_RSA.Text = "RSA";
             Tab_RSA.UseVisualStyleBackColor = true;
             // 
+            // RSAControl
+            // 
+            RSAControl.Dock = DockStyle.Fill;
+            RSAControl.Location = new Point(3, 3);
+            RSAControl.Name = "RSAControl";
+            RSAControl.Size = new Size(1352, 945);
+            RSAControl.TabIndex = 0;
+            RSAControl.Load += rsaControl1_Load;
+            // 
             // Tab_Vigenere
             // 
+            Tab_Vigenere.Controls.Add(VigenereControl);
             Tab_Vigenere.Location = new Point(8, 46);
             Tab_Vigenere.Name = "Tab_Vigenere";
             Tab_Vigenere.Padding = new Padding(3);
-            Tab_Vigenere.Size = new Size(1405, 958);
+            Tab_Vigenere.Size = new Size(1358, 951);
             Tab_Vigenere.TabIndex = 2;
             Tab_Vigenere.Text = "Vigenère";
             Tab_Vigenere.UseVisualStyleBackColor = true;
+            // 
+            // VigenereControl
+            // 
+            VigenereControl.Dock = DockStyle.Fill;
+            VigenereControl.Location = new Point(3, 3);
+            VigenereControl.Name = "VigenereControl";
+            VigenereControl.Size = new Size(1352, 945);
+            VigenereControl.TabIndex = 0;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1433, 1010);
+            ClientSize = new Size(1374, 1005);
             Controls.Add(TbCtrl_Algorithms);
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Main Form";
             TbCtrl_Algorithms.ResumeLayout(false);
+            Tab_PlayFair.ResumeLayout(false);
+            Tab_RSA.ResumeLayout(false);
+            Tab_Vigenere.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -94,5 +133,8 @@
         private TabPage Tab_PlayFair;
         private TabPage Tab_RSA;
         private TabPage Tab_Vigenere;
+        private Controls.RSA.RSAControl RSAControl;
+        private Controls.PlayFair.PlayFairControl PlayFairControl;
+        private Controls.Vigenere.VigenereControl VigenereControl;
     }
 }
