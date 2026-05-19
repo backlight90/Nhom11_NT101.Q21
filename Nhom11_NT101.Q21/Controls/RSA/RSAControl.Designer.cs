@@ -28,67 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tabControl1 = new TabControl();
+            TbCtrl_RSAControl = new TabControl();
             tabPage1 = new TabPage();
+            Gb_ViewGeneratedKeys = new GroupBox();
+            Btn_CopyPrivateKey = new Button();
+            Rtb_PrivateKey = new RichTextBox();
+            Lbl_PrivateKey = new Label();
+            Btn_CopyPublicKey = new Button();
+            Rtb_PublicKey = new RichTextBox();
+            Lbl_PublicKey = new Label();
+            Gb_SaveKeys = new GroupBox();
+            Btn_ExportPrivateKey = new Button();
+            Btn_ExportPublicKey = new Button();
+            Tb_PINInputSaveKeys = new TextBox();
+            Lbl_PIN = new Label();
+            Gb_KeyPairGenerator = new GroupBox();
+            Btn_GenerateKeyPair = new Button();
+            Cbb_KeySize = new ComboBox();
+            Lbl_KeySize = new Label();
             tabPage2 = new TabPage();
-            groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
-            groupBox3 = new GroupBox();
-            label1 = new Label();
-            comboBox1 = new ComboBox();
-            button1 = new Button();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            button2 = new Button();
-            button3 = new Button();
-            label3 = new Label();
-            richTextBox1 = new RichTextBox();
-            button4 = new Button();
-            button5 = new Button();
-            richTextBox2 = new RichTextBox();
-            label4 = new Label();
-            btnBrowse = new Button();
-            lblFileSrc = new Label();
-            btnClearInputText = new Button();
-            lblInputSrcText = new Label();
-            btnPaste = new Button();
-            rtbInputSrcText = new RichTextBox();
-            groupBox4 = new GroupBox();
-            button7 = new Button();
-            label5 = new Label();
-            button8 = new Button();
-            richTextBox3 = new RichTextBox();
-            textBox2 = new TextBox();
-            label6 = new Label();
-            button6 = new Button();
-            btnCopy = new Button();
-            rtbResult = new RichTextBox();
-            lblResult = new Label();
-            tabControl1.SuspendLayout();
+            Gb_TextInput = new GroupBox();
+            Btn_BrowseText = new Button();
+            Lbl_ImportFileSrc = new Label();
+            Btn_ClearInputText = new Button();
+            Lbl_SrcTextInput = new Label();
+            Btn_Paste = new Button();
+            Rtb_SrcTextInput = new RichTextBox();
+            Btn_CopyResult = new Button();
+            Rtb_Result = new RichTextBox();
+            Lbl_Result = new Label();
+            Gb_KeyInput = new GroupBox();
+            Btn_Decrypt = new Button();
+            Tb_PINKeyInput = new TextBox();
+            Lbl_PINKeyInput = new Label();
+            Rtb_KeyInput = new RichTextBox();
+            Btn_BrowseKey = new Button();
+            Btn_Encrypt = new Button();
+            Lbl_KeyInput = new Label();
+            TbCtrl_RSAControl.SuspendLayout();
             tabPage1.SuspendLayout();
+            Gb_ViewGeneratedKeys.SuspendLayout();
+            Gb_SaveKeys.SuspendLayout();
+            Gb_KeyPairGenerator.SuspendLayout();
             tabPage2.SuspendLayout();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
-            groupBox4.SuspendLayout();
+            Gb_TextInput.SuspendLayout();
+            Gb_KeyInput.SuspendLayout();
             SuspendLayout();
             // 
-            // tabControl1
+            // TbCtrl_RSAControl
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Dock = DockStyle.Fill;
-            tabControl1.Location = new Point(0, 0);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1300, 1000);
-            tabControl1.TabIndex = 0;
+            TbCtrl_RSAControl.Controls.Add(tabPage1);
+            TbCtrl_RSAControl.Controls.Add(tabPage2);
+            TbCtrl_RSAControl.Dock = DockStyle.Fill;
+            TbCtrl_RSAControl.Location = new Point(0, 0);
+            TbCtrl_RSAControl.Name = "TbCtrl_RSAControl";
+            TbCtrl_RSAControl.SelectedIndex = 0;
+            TbCtrl_RSAControl.Size = new Size(1300, 1000);
+            TbCtrl_RSAControl.TabIndex = 0;
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(groupBox3);
-            tabPage1.Controls.Add(groupBox2);
-            tabPage1.Controls.Add(groupBox1);
+            tabPage1.Controls.Add(Gb_ViewGeneratedKeys);
+            tabPage1.Controls.Add(Gb_SaveKeys);
+            tabPage1.Controls.Add(Gb_KeyPairGenerator);
             tabPage1.Location = new Point(8, 46);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -97,18 +99,166 @@
             tabPage1.Text = "Key Management";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // Gb_ViewGeneratedKeys
+            // 
+            Gb_ViewGeneratedKeys.Controls.Add(Btn_CopyPrivateKey);
+            Gb_ViewGeneratedKeys.Controls.Add(Rtb_PrivateKey);
+            Gb_ViewGeneratedKeys.Controls.Add(Lbl_PrivateKey);
+            Gb_ViewGeneratedKeys.Controls.Add(Btn_CopyPublicKey);
+            Gb_ViewGeneratedKeys.Controls.Add(Rtb_PublicKey);
+            Gb_ViewGeneratedKeys.Controls.Add(Lbl_PublicKey);
+            Gb_ViewGeneratedKeys.Location = new Point(29, 360);
+            Gb_ViewGeneratedKeys.Name = "Gb_ViewGeneratedKeys";
+            Gb_ViewGeneratedKeys.Size = new Size(1212, 532);
+            Gb_ViewGeneratedKeys.TabIndex = 2;
+            Gb_ViewGeneratedKeys.TabStop = false;
+            Gb_ViewGeneratedKeys.Text = "View Generated Keys (XML Format)";
+            // 
+            // Btn_CopyPrivateKey
+            // 
+            Btn_CopyPrivateKey.Location = new Point(977, 301);
+            Btn_CopyPrivateKey.Name = "Btn_CopyPrivateKey";
+            Btn_CopyPrivateKey.Size = new Size(215, 46);
+            Btn_CopyPrivateKey.TabIndex = 7;
+            Btn_CopyPrivateKey.Text = "Copy Private Key";
+            Btn_CopyPrivateKey.UseVisualStyleBackColor = true;
+            // 
+            // Rtb_PrivateKey
+            // 
+            Rtb_PrivateKey.Location = new Point(24, 361);
+            Rtb_PrivateKey.Name = "Rtb_PrivateKey";
+            Rtb_PrivateKey.Size = new Size(1168, 115);
+            Rtb_PrivateKey.TabIndex = 8;
+            Rtb_PrivateKey.Text = "";
+            // 
+            // Lbl_PrivateKey
+            // 
+            Lbl_PrivateKey.AutoSize = true;
+            Lbl_PrivateKey.Location = new Point(24, 315);
+            Lbl_PrivateKey.Name = "Lbl_PrivateKey";
+            Lbl_PrivateKey.Size = new Size(316, 32);
+            Lbl_PrivateKey.TabIndex = 9;
+            Lbl_PrivateKey.Text = "Private Key (For Decryption):";
+            // 
+            // Btn_CopyPublicKey
+            // 
+            Btn_CopyPublicKey.Location = new Point(977, 69);
+            Btn_CopyPublicKey.Name = "Btn_CopyPublicKey";
+            Btn_CopyPublicKey.Size = new Size(215, 46);
+            Btn_CopyPublicKey.TabIndex = 3;
+            Btn_CopyPublicKey.Text = "Copy Public Key";
+            Btn_CopyPublicKey.UseVisualStyleBackColor = true;
+            // 
+            // Rtb_PublicKey
+            // 
+            Rtb_PublicKey.Location = new Point(24, 129);
+            Rtb_PublicKey.Name = "Rtb_PublicKey";
+            Rtb_PublicKey.Size = new Size(1168, 115);
+            Rtb_PublicKey.TabIndex = 6;
+            Rtb_PublicKey.Text = "";
+            // 
+            // Lbl_PublicKey
+            // 
+            Lbl_PublicKey.AutoSize = true;
+            Lbl_PublicKey.Location = new Point(24, 83);
+            Lbl_PublicKey.Name = "Lbl_PublicKey";
+            Lbl_PublicKey.Size = new Size(304, 32);
+            Lbl_PublicKey.TabIndex = 6;
+            Lbl_PublicKey.Text = "Public Key (For Encryption):";
+            // 
+            // Gb_SaveKeys
+            // 
+            Gb_SaveKeys.Controls.Add(Btn_ExportPrivateKey);
+            Gb_SaveKeys.Controls.Add(Btn_ExportPublicKey);
+            Gb_SaveKeys.Controls.Add(Tb_PINInputSaveKeys);
+            Gb_SaveKeys.Controls.Add(Lbl_PIN);
+            Gb_SaveKeys.Location = new Point(550, 46);
+            Gb_SaveKeys.Name = "Gb_SaveKeys";
+            Gb_SaveKeys.Size = new Size(691, 260);
+            Gb_SaveKeys.TabIndex = 1;
+            Gb_SaveKeys.TabStop = false;
+            Gb_SaveKeys.Text = "Save Keys to Files";
+            // 
+            // Btn_ExportPrivateKey
+            // 
+            Btn_ExportPrivateKey.Location = new Point(383, 154);
+            Btn_ExportPrivateKey.Name = "Btn_ExportPrivateKey";
+            Btn_ExportPrivateKey.Size = new Size(288, 46);
+            Btn_ExportPrivateKey.TabIndex = 5;
+            Btn_ExportPrivateKey.Text = "Export Private Key (.xml)";
+            Btn_ExportPrivateKey.UseVisualStyleBackColor = true;
+            // 
+            // Btn_ExportPublicKey
+            // 
+            Btn_ExportPublicKey.Location = new Point(23, 154);
+            Btn_ExportPublicKey.Name = "Btn_ExportPublicKey";
+            Btn_ExportPublicKey.Size = new Size(288, 46);
+            Btn_ExportPublicKey.TabIndex = 3;
+            Btn_ExportPublicKey.Text = "Export Public Key (.xml)";
+            Btn_ExportPublicKey.UseVisualStyleBackColor = true;
+            // 
+            // Tb_PINInputSaveKeys
+            // 
+            Tb_PINInputSaveKeys.Location = new Point(97, 53);
+            Tb_PINInputSaveKeys.Name = "Tb_PINInputSaveKeys";
+            Tb_PINInputSaveKeys.Size = new Size(357, 39);
+            Tb_PINInputSaveKeys.TabIndex = 4;
+            // 
+            // Lbl_PIN
+            // 
+            Lbl_PIN.AutoSize = true;
+            Lbl_PIN.Location = new Point(23, 56);
+            Lbl_PIN.Name = "Lbl_PIN";
+            Lbl_PIN.Size = new Size(56, 32);
+            Lbl_PIN.TabIndex = 3;
+            Lbl_PIN.Text = "PIN:";
+            // 
+            // Gb_KeyPairGenerator
+            // 
+            Gb_KeyPairGenerator.Controls.Add(Btn_GenerateKeyPair);
+            Gb_KeyPairGenerator.Controls.Add(Cbb_KeySize);
+            Gb_KeyPairGenerator.Controls.Add(Lbl_KeySize);
+            Gb_KeyPairGenerator.Location = new Point(29, 37);
+            Gb_KeyPairGenerator.Name = "Gb_KeyPairGenerator";
+            Gb_KeyPairGenerator.Size = new Size(479, 269);
+            Gb_KeyPairGenerator.TabIndex = 0;
+            Gb_KeyPairGenerator.TabStop = false;
+            Gb_KeyPairGenerator.Text = "Key Pair Generator";
+            // 
+            // Btn_GenerateKeyPair
+            // 
+            Btn_GenerateKeyPair.Location = new Point(24, 163);
+            Btn_GenerateKeyPair.Name = "Btn_GenerateKeyPair";
+            Btn_GenerateKeyPair.Size = new Size(288, 46);
+            Btn_GenerateKeyPair.TabIndex = 2;
+            Btn_GenerateKeyPair.Text = "Generate Key Pair";
+            Btn_GenerateKeyPair.UseVisualStyleBackColor = true;
+            // 
+            // Cbb_KeySize
+            // 
+            Cbb_KeySize.FormattingEnabled = true;
+            Cbb_KeySize.Items.AddRange(new object[] { "512", "1024" });
+            Cbb_KeySize.Location = new Point(214, 65);
+            Cbb_KeySize.Name = "Cbb_KeySize";
+            Cbb_KeySize.Size = new Size(242, 40);
+            Cbb_KeySize.TabIndex = 1;
+            // 
+            // Lbl_KeySize
+            // 
+            Lbl_KeySize.AutoSize = true;
+            Lbl_KeySize.Location = new Point(24, 65);
+            Lbl_KeySize.Name = "Lbl_KeySize";
+            Lbl_KeySize.Size = new Size(167, 32);
+            Lbl_KeySize.TabIndex = 0;
+            Lbl_KeySize.Text = "Key Size (Bits):";
+            // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(btnCopy);
-            tabPage2.Controls.Add(rtbResult);
-            tabPage2.Controls.Add(lblResult);
-            tabPage2.Controls.Add(groupBox4);
-            tabPage2.Controls.Add(btnBrowse);
-            tabPage2.Controls.Add(lblFileSrc);
-            tabPage2.Controls.Add(btnClearInputText);
-            tabPage2.Controls.Add(lblInputSrcText);
-            tabPage2.Controls.Add(btnPaste);
-            tabPage2.Controls.Add(rtbInputSrcText);
+            tabPage2.Controls.Add(Gb_TextInput);
+            tabPage2.Controls.Add(Btn_CopyResult);
+            tabPage2.Controls.Add(Rtb_Result);
+            tabPage2.Controls.Add(Lbl_Result);
+            tabPage2.Controls.Add(Gb_KeyInput);
             tabPage2.Location = new Point(8, 46);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -117,385 +267,250 @@
             tabPage2.Text = "Encryption & Decryption";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(29, 37);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(479, 269);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Key Pair Generator";
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(button3);
-            groupBox2.Controls.Add(button2);
-            groupBox2.Controls.Add(textBox1);
-            groupBox2.Controls.Add(label2);
-            groupBox2.Location = new Point(550, 46);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(691, 260);
-            groupBox2.TabIndex = 1;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Save Keys to Files";
-            // 
-            // groupBox3
-            // 
-            groupBox3.Controls.Add(button5);
-            groupBox3.Controls.Add(richTextBox2);
-            groupBox3.Controls.Add(label4);
-            groupBox3.Controls.Add(button4);
-            groupBox3.Controls.Add(richTextBox1);
-            groupBox3.Controls.Add(label3);
-            groupBox3.Location = new Point(29, 360);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(1212, 532);
-            groupBox3.TabIndex = 2;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "View Generated Keys (XML Format)";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(24, 65);
-            label1.Name = "label1";
-            label1.Size = new Size(167, 32);
-            label1.TabIndex = 0;
-            label1.Text = "Key Size (Bits):";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "512", "1024" });
-            comboBox1.Location = new Point(214, 65);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(242, 40);
-            comboBox1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(24, 163);
-            button1.Name = "button1";
-            button1.Size = new Size(288, 46);
-            button1.TabIndex = 2;
-            button1.Text = "Generate Key Pairs";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(23, 56);
-            label2.Name = "label2";
-            label2.Size = new Size(56, 32);
-            label2.TabIndex = 3;
-            label2.Text = "PIN:";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(97, 53);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(357, 39);
-            textBox1.TabIndex = 4;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(23, 154);
-            button2.Name = "button2";
-            button2.Size = new Size(288, 46);
-            button2.TabIndex = 3;
-            button2.Text = "Export Public Key (.xml)";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(383, 154);
-            button3.Name = "button3";
-            button3.Size = new Size(288, 46);
-            button3.TabIndex = 5;
-            button3.Text = "Export Private Key (.xml)";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(24, 83);
-            label3.Name = "label3";
-            label3.Size = new Size(304, 32);
-            label3.TabIndex = 6;
-            label3.Text = "Public Key (For Encryption):";
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new Point(24, 129);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(1168, 115);
-            richTextBox1.TabIndex = 6;
-            richTextBox1.Text = "";
-            // 
-            // button4
-            // 
-            button4.Location = new Point(977, 69);
-            button4.Name = "button4";
-            button4.Size = new Size(215, 46);
-            button4.TabIndex = 3;
-            button4.Text = "Copy Public Key";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(977, 301);
-            button5.Name = "button5";
-            button5.Size = new Size(215, 46);
-            button5.TabIndex = 7;
-            button5.Text = "Copy Private Key";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox2
-            // 
-            richTextBox2.Location = new Point(24, 361);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(1168, 115);
-            richTextBox2.TabIndex = 8;
-            richTextBox2.Text = "";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(24, 315);
-            label4.Name = "label4";
-            label4.Size = new Size(316, 32);
-            label4.TabIndex = 9;
-            label4.Text = "Private Key (For Decryption):";
-            // 
-            // btnBrowse
-            // 
-            btnBrowse.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnBrowse.Location = new Point(200, 342);
-            btnBrowse.Name = "btnBrowse";
-            btnBrowse.Size = new Size(137, 46);
-            btnBrowse.TabIndex = 55;
-            btnBrowse.Text = "Browse";
-            btnBrowse.UseVisualStyleBackColor = true;
-            // 
-            // lblFileSrc
-            // 
-            lblFileSrc.AutoSize = true;
-            lblFileSrc.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblFileSrc.Location = new Point(26, 342);
-            lblFileSrc.Name = "lblFileSrc";
-            lblFileSrc.Size = new Size(156, 40);
-            lblFileSrc.TabIndex = 54;
-            lblFileSrc.Text = "Import file:";
-            // 
-            // btnClearInputText
-            // 
-            btnClearInputText.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnClearInputText.Location = new Point(359, 40);
-            btnClearInputText.Name = "btnClearInputText";
-            btnClearInputText.Size = new Size(137, 46);
-            btnClearInputText.TabIndex = 53;
-            btnClearInputText.Text = "Clear";
-            btnClearInputText.UseVisualStyleBackColor = true;
-            // 
-            // lblInputSrcText
-            // 
-            lblInputSrcText.AutoSize = true;
-            lblInputSrcText.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblInputSrcText.Location = new Point(34, 40);
-            lblInputSrcText.Name = "lblInputSrcText";
-            lblInputSrcText.Size = new Size(145, 40);
-            lblInputSrcText.TabIndex = 52;
-            lblInputSrcText.Text = "Enter text:";
-            // 
-            // btnPaste
-            // 
-            btnPaste.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPaste.Location = new Point(200, 40);
-            btnPaste.Name = "btnPaste";
-            btnPaste.Size = new Size(137, 46);
-            btnPaste.TabIndex = 51;
-            btnPaste.Text = "Paste";
-            btnPaste.UseVisualStyleBackColor = true;
-            // 
-            // rtbInputSrcText
-            // 
-            rtbInputSrcText.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rtbInputSrcText.Location = new Point(34, 103);
-            rtbInputSrcText.Name = "rtbInputSrcText";
-            rtbInputSrcText.Size = new Size(462, 209);
-            rtbInputSrcText.TabIndex = 50;
-            rtbInputSrcText.Text = "";
-            // 
-            // groupBox4
-            // 
-            groupBox4.Controls.Add(button6);
-            groupBox4.Controls.Add(textBox2);
-            groupBox4.Controls.Add(label6);
-            groupBox4.Controls.Add(richTextBox3);
-            groupBox4.Controls.Add(button8);
-            groupBox4.Controls.Add(button7);
-            groupBox4.Controls.Add(label5);
-            groupBox4.Location = new Point(575, 54);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(679, 334);
-            groupBox4.TabIndex = 56;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Key Input";
-            // 
-            // button7
-            // 
-            button7.Location = new Point(101, 260);
-            button7.Name = "button7";
-            button7.Size = new Size(189, 46);
-            button7.TabIndex = 3;
-            button7.Text = "Encrypt";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(23, 56);
-            label5.Name = "label5";
-            label5.Size = new Size(58, 32);
-            label5.TabIndex = 3;
-            label5.Text = "Key:";
-            // 
-            // button8
-            // 
-            button8.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button8.Location = new Point(525, 58);
-            button8.Name = "button8";
-            button8.Size = new Size(137, 46);
-            button8.TabIndex = 57;
-            button8.Text = "Browse";
-            button8.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox3
-            // 
-            richTextBox3.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBox3.Location = new Point(101, 56);
-            richTextBox3.Name = "richTextBox3";
-            richTextBox3.Size = new Size(389, 48);
-            richTextBox3.TabIndex = 57;
-            richTextBox3.Text = "";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(101, 133);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(389, 39);
-            textBox2.TabIndex = 59;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(23, 136);
-            label6.Name = "label6";
-            label6.Size = new Size(56, 32);
-            label6.TabIndex = 58;
-            label6.Text = "PIN:";
-            // 
-            // button6
-            // 
-            button6.Location = new Point(350, 260);
-            button6.Name = "button6";
-            button6.Size = new Size(189, 46);
-            button6.TabIndex = 60;
-            button6.Text = "Decrypt";
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // btnCopy
-            // 
-            btnCopy.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCopy.Location = new Point(1100, 467);
-            btnCopy.Name = "btnCopy";
-            btnCopy.Size = new Size(137, 46);
-            btnCopy.TabIndex = 59;
-            btnCopy.Text = "Copy";
-            btnCopy.UseVisualStyleBackColor = true;
-            // 
-            // rtbResult
-            // 
-            rtbResult.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rtbResult.Location = new Point(34, 539);
-            rtbResult.Name = "rtbResult";
-            rtbResult.ReadOnly = true;
-            rtbResult.Size = new Size(1220, 333);
-            rtbResult.TabIndex = 58;
-            rtbResult.Text = "";
-            // 
-            // lblResult
-            // 
-            lblResult.AutoSize = true;
-            lblResult.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblResult.Location = new Point(34, 467);
-            lblResult.Name = "lblResult";
-            lblResult.Size = new Size(99, 40);
-            lblResult.TabIndex = 57;
-            lblResult.Text = "Result:";
+            // Gb_TextInput
+            // 
+            Gb_TextInput.Controls.Add(Btn_BrowseText);
+            Gb_TextInput.Controls.Add(Lbl_ImportFileSrc);
+            Gb_TextInput.Controls.Add(Btn_ClearInputText);
+            Gb_TextInput.Controls.Add(Lbl_SrcTextInput);
+            Gb_TextInput.Controls.Add(Btn_Paste);
+            Gb_TextInput.Controls.Add(Rtb_SrcTextInput);
+            Gb_TextInput.Location = new Point(34, 38);
+            Gb_TextInput.Name = "Gb_TextInput";
+            Gb_TextInput.Size = new Size(520, 397);
+            Gb_TextInput.TabIndex = 60;
+            Gb_TextInput.TabStop = false;
+            Gb_TextInput.Text = "Text Input";
+            // 
+            // Btn_BrowseText
+            // 
+            Btn_BrowseText.Font = new Font("Segoe UI", 9F);
+            Btn_BrowseText.Location = new Point(188, 329);
+            Btn_BrowseText.Name = "Btn_BrowseText";
+            Btn_BrowseText.Size = new Size(135, 46);
+            Btn_BrowseText.TabIndex = 61;
+            Btn_BrowseText.Text = "Browse";
+            Btn_BrowseText.UseVisualStyleBackColor = true;
+            // 
+            // Lbl_ImportFileSrc
+            // 
+            Lbl_ImportFileSrc.AutoSize = true;
+            Lbl_ImportFileSrc.Font = new Font("Segoe UI", 9F);
+            Lbl_ImportFileSrc.Location = new Point(35, 336);
+            Lbl_ImportFileSrc.Name = "Lbl_ImportFileSrc";
+            Lbl_ImportFileSrc.Size = new Size(130, 32);
+            Lbl_ImportFileSrc.TabIndex = 60;
+            Lbl_ImportFileSrc.Text = "Import file:";
+            // 
+            // Btn_ClearInputText
+            // 
+            Btn_ClearInputText.Font = new Font("Segoe UI", 9F);
+            Btn_ClearInputText.Location = new Point(360, 42);
+            Btn_ClearInputText.Name = "Btn_ClearInputText";
+            Btn_ClearInputText.Size = new Size(135, 46);
+            Btn_ClearInputText.TabIndex = 59;
+            Btn_ClearInputText.Text = "Clear";
+            Btn_ClearInputText.UseVisualStyleBackColor = true;
+            // 
+            // Lbl_SrcTextInput
+            // 
+            Lbl_SrcTextInput.AutoSize = true;
+            Lbl_SrcTextInput.Font = new Font("Segoe UI", 9F);
+            Lbl_SrcTextInput.Location = new Point(35, 48);
+            Lbl_SrcTextInput.Name = "Lbl_SrcTextInput";
+            Lbl_SrcTextInput.Size = new Size(121, 32);
+            Lbl_SrcTextInput.TabIndex = 58;
+            Lbl_SrcTextInput.Text = "Enter text:";
+            // 
+            // Btn_Paste
+            // 
+            Btn_Paste.Font = new Font("Segoe UI", 9F);
+            Btn_Paste.Location = new Point(201, 42);
+            Btn_Paste.Name = "Btn_Paste";
+            Btn_Paste.Size = new Size(135, 46);
+            Btn_Paste.TabIndex = 57;
+            Btn_Paste.Text = "Paste";
+            Btn_Paste.UseVisualStyleBackColor = true;
+            // 
+            // Rtb_SrcTextInput
+            // 
+            Rtb_SrcTextInput.Font = new Font("Segoe UI", 9F);
+            Rtb_SrcTextInput.Location = new Point(35, 97);
+            Rtb_SrcTextInput.Name = "Rtb_SrcTextInput";
+            Rtb_SrcTextInput.Size = new Size(460, 199);
+            Rtb_SrcTextInput.TabIndex = 56;
+            Rtb_SrcTextInput.Text = "";
+            // 
+            // Btn_CopyResult
+            // 
+            Btn_CopyResult.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Btn_CopyResult.Location = new Point(1067, 478);
+            Btn_CopyResult.Name = "Btn_CopyResult";
+            Btn_CopyResult.Size = new Size(187, 46);
+            Btn_CopyResult.TabIndex = 59;
+            Btn_CopyResult.Text = "Copy Result";
+            Btn_CopyResult.UseVisualStyleBackColor = true;
+            // 
+            // Rtb_Result
+            // 
+            Rtb_Result.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Rtb_Result.Location = new Point(34, 539);
+            Rtb_Result.Name = "Rtb_Result";
+            Rtb_Result.ReadOnly = true;
+            Rtb_Result.Size = new Size(1220, 333);
+            Rtb_Result.TabIndex = 58;
+            Rtb_Result.Text = "";
+            // 
+            // Lbl_Result
+            // 
+            Lbl_Result.AutoSize = true;
+            Lbl_Result.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Lbl_Result.Location = new Point(34, 484);
+            Lbl_Result.Name = "Lbl_Result";
+            Lbl_Result.Size = new Size(99, 40);
+            Lbl_Result.TabIndex = 57;
+            Lbl_Result.Text = "Result:";
+            // 
+            // Gb_KeyInput
+            // 
+            Gb_KeyInput.Controls.Add(Btn_Decrypt);
+            Gb_KeyInput.Controls.Add(Tb_PINKeyInput);
+            Gb_KeyInput.Controls.Add(Lbl_PINKeyInput);
+            Gb_KeyInput.Controls.Add(Rtb_KeyInput);
+            Gb_KeyInput.Controls.Add(Btn_BrowseKey);
+            Gb_KeyInput.Controls.Add(Btn_Encrypt);
+            Gb_KeyInput.Controls.Add(Lbl_KeyInput);
+            Gb_KeyInput.Location = new Point(610, 38);
+            Gb_KeyInput.Name = "Gb_KeyInput";
+            Gb_KeyInput.Size = new Size(644, 334);
+            Gb_KeyInput.TabIndex = 56;
+            Gb_KeyInput.TabStop = false;
+            Gb_KeyInput.Text = "Key Input";
+            // 
+            // Btn_Decrypt
+            // 
+            Btn_Decrypt.Location = new Point(350, 260);
+            Btn_Decrypt.Name = "Btn_Decrypt";
+            Btn_Decrypt.Size = new Size(189, 46);
+            Btn_Decrypt.TabIndex = 60;
+            Btn_Decrypt.Text = "Decrypt";
+            Btn_Decrypt.UseVisualStyleBackColor = true;
+            // 
+            // Tb_PINKeyInput
+            // 
+            Tb_PINKeyInput.Location = new Point(101, 147);
+            Tb_PINKeyInput.Name = "Tb_PINKeyInput";
+            Tb_PINKeyInput.Size = new Size(389, 39);
+            Tb_PINKeyInput.TabIndex = 59;
+            // 
+            // Lbl_PINKeyInput
+            // 
+            Lbl_PINKeyInput.AutoSize = true;
+            Lbl_PINKeyInput.Location = new Point(23, 150);
+            Lbl_PINKeyInput.Name = "Lbl_PINKeyInput";
+            Lbl_PINKeyInput.Size = new Size(56, 32);
+            Lbl_PINKeyInput.TabIndex = 58;
+            Lbl_PINKeyInput.Text = "PIN:";
+            // 
+            // Rtb_KeyInput
+            // 
+            Rtb_KeyInput.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Rtb_KeyInput.Location = new Point(101, 56);
+            Rtb_KeyInput.Name = "Rtb_KeyInput";
+            Rtb_KeyInput.Size = new Size(389, 48);
+            Rtb_KeyInput.TabIndex = 57;
+            Rtb_KeyInput.Text = "";
+            // 
+            // Btn_BrowseKey
+            // 
+            Btn_BrowseKey.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Btn_BrowseKey.Location = new Point(507, 56);
+            Btn_BrowseKey.Name = "Btn_BrowseKey";
+            Btn_BrowseKey.Size = new Size(127, 46);
+            Btn_BrowseKey.TabIndex = 57;
+            Btn_BrowseKey.Text = "Browse";
+            Btn_BrowseKey.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Encrypt
+            // 
+            Btn_Encrypt.Location = new Point(101, 260);
+            Btn_Encrypt.Name = "Btn_Encrypt";
+            Btn_Encrypt.Size = new Size(189, 46);
+            Btn_Encrypt.TabIndex = 3;
+            Btn_Encrypt.Text = "Encrypt";
+            Btn_Encrypt.UseVisualStyleBackColor = true;
+            // 
+            // Lbl_KeyInput
+            // 
+            Lbl_KeyInput.AutoSize = true;
+            Lbl_KeyInput.Location = new Point(23, 56);
+            Lbl_KeyInput.Name = "Lbl_KeyInput";
+            Lbl_KeyInput.Size = new Size(58, 32);
+            Lbl_KeyInput.TabIndex = 3;
+            Lbl_KeyInput.Text = "Key:";
             // 
             // RSAControl
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(tabControl1);
+            Controls.Add(TbCtrl_RSAControl);
             Name = "RSAControl";
             Size = new Size(1300, 1000);
-            tabControl1.ResumeLayout(false);
+            TbCtrl_RSAControl.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            Gb_ViewGeneratedKeys.ResumeLayout(false);
+            Gb_ViewGeneratedKeys.PerformLayout();
+            Gb_SaveKeys.ResumeLayout(false);
+            Gb_SaveKeys.PerformLayout();
+            Gb_KeyPairGenerator.ResumeLayout(false);
+            Gb_KeyPairGenerator.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            groupBox4.ResumeLayout(false);
-            groupBox4.PerformLayout();
+            Gb_TextInput.ResumeLayout(false);
+            Gb_TextInput.PerformLayout();
+            Gb_KeyInput.ResumeLayout(false);
+            Gb_KeyInput.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TabControl tabControl1;
+        private TabControl TbCtrl_RSAControl;
         private TabPage tabPage1;
         private TabPage tabPage2;
-        private GroupBox groupBox3;
-        private GroupBox groupBox2;
-        private GroupBox groupBox1;
-        private Button button1;
-        private ComboBox comboBox1;
-        private Label label1;
-        private Button button5;
-        private RichTextBox richTextBox2;
-        private Label label4;
-        private Button button4;
-        private RichTextBox richTextBox1;
-        private Label label3;
-        private Button button3;
-        private Button button2;
-        private TextBox textBox1;
-        private Label label2;
-        private GroupBox groupBox4;
-        private RichTextBox richTextBox3;
-        private Button button8;
-        private Button button7;
-        private Label label5;
-        private Button btnBrowse;
-        private Label lblFileSrc;
-        private Button btnClearInputText;
-        private Label lblInputSrcText;
-        private Button btnPaste;
-        private RichTextBox rtbInputSrcText;
-        private Button button6;
-        private TextBox textBox2;
-        private Label label6;
-        private Button btnCopy;
-        private RichTextBox rtbResult;
-        private Label lblResult;
+        private GroupBox Gb_ViewGeneratedKeys;
+        private GroupBox Gb_SaveKeys;
+        private GroupBox Gb_KeyPairGenerator;
+        private Button Btn_GenerateKeyPair;
+        private ComboBox Cbb_KeySize;
+        private Label Lbl_KeySize;
+        private Button Btn_CopyPrivateKey;
+        private RichTextBox Rtb_PrivateKey;
+        private Label Lbl_PrivateKey;
+        private Button Btn_CopyPublicKey;
+        private RichTextBox Rtb_PublicKey;
+        private Label Lbl_PublicKey;
+        private Button Btn_ExportPrivateKey;
+        private Button Btn_ExportPublicKey;
+        private TextBox Tb_PINInputSaveKeys;
+        private Label Lbl_PIN;
+        private GroupBox Gb_KeyInput;
+        private RichTextBox Rtb_KeyInput;
+        private Button Btn_BrowseKey;
+        private Button Btn_Encrypt;
+        private Label Lbl_KeyInput;
+        private Button Btn_Decrypt;
+        private TextBox Tb_PINKeyInput;
+        private Label Lbl_PINKeyInput;
+        private Button Btn_CopyResult;
+        private RichTextBox Rtb_Result;
+        private Label Lbl_Result;
+        private GroupBox Gb_TextInput;
+        private Button Btn_BrowseText;
+        private Label Lbl_ImportFileSrc;
+        private Button Btn_ClearInputText;
+        private Label Lbl_SrcTextInput;
+        private Button Btn_Paste;
+        private RichTextBox Rtb_SrcTextInput;
     }
 }
