@@ -120,17 +120,27 @@ namespace Nhom11_NT101.Q21.Algorithms.PlayFair
 
         public string Decrypt(string ciphertext)
         {
+            // BỔ SUNG: Làm sạch chuỗi đầu vào (Loại bỏ khoảng trắng, ký tự đặc biệt, chuyển thành chữ in hoa và thay J bằng I)
+            ciphertext = Regex.Replace(ciphertext.ToUpper(), @"[^A-Z]", "").Replace("J", "I");
+
+            // BỔ SUNG: Kiểm tra nếu chuỗi trống hoặc bị lẻ ký tự sau khi lọc thì không xử lý để tránh lỗi crash
+            if (string.IsNullOrEmpty(ciphertext) || ciphertext.Length % 2 != 0)
+            {
+                throw new ArgumentException("Chuỗi mã hóa không hợp lệ (độ dài sau khi lọc phải là số chẵn và không trống).");
+            }
+
             StringBuilder plaintext = new StringBuilder();
             for (int i = 0; i < ciphertext.Length; i += 2)
             {
                 char a = ciphertext[i];
-                char b = ciphertext[i + 1];
+                char b = ciphertext[i + 1]; // Bây giờ đảm bảo không bao giờ bị vượt quá chỉ mục (out of bounds)
                 var posA = FindPosition(a);
                 var posB = FindPosition(b);
+
                 // Cùng hàng: Lấy ký tự bên trái (vòng lại nếu quá biên)
                 if (posA.row == posB.row)
                 {
-                    plaintext.Append(keyMatrix[posA.row, (posA.col + 4) % 5]); // +4 tương đương -1 trong modulo 5
+                    plaintext.Append(keyMatrix[posA.row, (posA.col + 4) % 5]);
                     plaintext.Append(keyMatrix[posB.row, (posB.col + 4) % 5]);
                 }
                 // Cùng cột: Lấy ký tự bên trên (vòng lại nếu quá biên)
