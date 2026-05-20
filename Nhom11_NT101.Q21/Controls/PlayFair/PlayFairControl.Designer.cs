@@ -1,4 +1,4 @@
-﻿namespace Nhom11_NT101.Q21.Controls.PlayFair
+namespace Nhom11_NT101.Q21.Controls.PlayFair
 {
     partial class PlayFairControl
     {
@@ -33,6 +33,8 @@
             Lbl_Result = new Label();
             Btn_Decrypt = new Button();
             Gb_KeyInput = new GroupBox();
+            Rtb_KeyInput = new RichTextBox();
+            Lbl_KeyInput = new Label();
             Gb_KeyMatrix = new GroupBox();
             Lbl_M53 = new Label();
             Lbl_M54 = new Label();
@@ -67,8 +69,6 @@
             Lbl_SrcTextInput = new Label();
             Btn_Paste = new Button();
             Rtb_SrcTextInput = new RichTextBox();
-            Rtb_KeyInput = new RichTextBox();
-            Lbl_KeyInput = new Label();
             Gb_KeyInput.SuspendLayout();
             Gb_KeyMatrix.SuspendLayout();
             Gb_TextInput.SuspendLayout();
@@ -77,20 +77,23 @@
             // Btn_Encrypt
             // 
             Btn_Encrypt.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Btn_Encrypt.Location = new Point(303, 847);
+            Btn_Encrypt.Location = new Point(186, 529);
+            Btn_Encrypt.Margin = new Padding(2);
             Btn_Encrypt.Name = "Btn_Encrypt";
-            Btn_Encrypt.Size = new Size(285, 71);
+            Btn_Encrypt.Size = new Size(175, 44);
             Btn_Encrypt.TabIndex = 46;
             Btn_Encrypt.Text = "Encrypt";
             Btn_Encrypt.UseVisualStyleBackColor = true;
+            Btn_Encrypt.Click += Btn_Encrypt_Click;
             // 
             // Rtb_Result
             // 
             Rtb_Result.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Rtb_Result.Location = new Point(33, 654);
+            Rtb_Result.Location = new Point(20, 409);
+            Rtb_Result.Margin = new Padding(2);
             Rtb_Result.Name = "Rtb_Result";
             Rtb_Result.ReadOnly = true;
-            Rtb_Result.Size = new Size(1217, 148);
+            Rtb_Result.Size = new Size(750, 94);
             Rtb_Result.TabIndex = 51;
             Rtb_Result.Text = "";
             // 
@@ -98,33 +101,58 @@
             // 
             Lbl_Result.AutoSize = true;
             Lbl_Result.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Lbl_Result.Location = new Point(33, 595);
+            Lbl_Result.Location = new Point(20, 372);
+            Lbl_Result.Margin = new Padding(2, 0, 2, 0);
             Lbl_Result.Name = "Lbl_Result";
-            Lbl_Result.Size = new Size(99, 40);
+            Lbl_Result.Size = new Size(66, 25);
             Lbl_Result.TabIndex = 50;
             Lbl_Result.Text = "Result:";
             // 
             // Btn_Decrypt
             // 
             Btn_Decrypt.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Btn_Decrypt.Location = new Point(690, 847);
+            Btn_Decrypt.Location = new Point(425, 529);
+            Btn_Decrypt.Margin = new Padding(2);
             Btn_Decrypt.Name = "Btn_Decrypt";
-            Btn_Decrypt.Size = new Size(285, 71);
+            Btn_Decrypt.Size = new Size(175, 44);
             Btn_Decrypt.TabIndex = 53;
             Btn_Decrypt.Text = "Decrypt";
             Btn_Decrypt.UseVisualStyleBackColor = true;
+            Btn_Decrypt.Click += Btn_Decrypt_Click;
             // 
             // Gb_KeyInput
             // 
             Gb_KeyInput.Controls.Add(Rtb_KeyInput);
             Gb_KeyInput.Controls.Add(Lbl_KeyInput);
             Gb_KeyInput.Controls.Add(Gb_KeyMatrix);
-            Gb_KeyInput.Location = new Point(628, 31);
+            Gb_KeyInput.Location = new Point(386, 19);
+            Gb_KeyInput.Margin = new Padding(2);
             Gb_KeyInput.Name = "Gb_KeyInput";
-            Gb_KeyInput.Size = new Size(622, 518);
+            Gb_KeyInput.Padding = new Padding(2);
+            Gb_KeyInput.Size = new Size(383, 324);
             Gb_KeyInput.TabIndex = 57;
             Gb_KeyInput.TabStop = false;
             Gb_KeyInput.Text = "Key Input";
+            // 
+            // Rtb_KeyInput
+            // 
+            Rtb_KeyInput.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Rtb_KeyInput.Location = new Point(71, 33);
+            Rtb_KeyInput.Margin = new Padding(2);
+            Rtb_KeyInput.Name = "Rtb_KeyInput";
+            Rtb_KeyInput.Size = new Size(282, 32);
+            Rtb_KeyInput.TabIndex = 60;
+            Rtb_KeyInput.Text = "";
+            // 
+            // Lbl_KeyInput
+            // 
+            Lbl_KeyInput.AutoSize = true;
+            Lbl_KeyInput.Location = new Point(19, 38);
+            Lbl_KeyInput.Margin = new Padding(2, 0, 2, 0);
+            Lbl_KeyInput.Name = "Lbl_KeyInput";
+            Lbl_KeyInput.Size = new Size(36, 20);
+            Lbl_KeyInput.TabIndex = 58;
+            Lbl_KeyInput.Text = "Key:";
             // 
             // Gb_KeyMatrix
             // 
@@ -153,9 +181,11 @@
             Gb_KeyMatrix.Controls.Add(Lbl_M15);
             Gb_KeyMatrix.Controls.Add(Lbl_M12);
             Gb_KeyMatrix.Controls.Add(Lbl_M11);
-            Gb_KeyMatrix.Location = new Point(116, 116);
+            Gb_KeyMatrix.Location = new Point(71, 72);
+            Gb_KeyMatrix.Margin = new Padding(2);
             Gb_KeyMatrix.Name = "Gb_KeyMatrix";
-            Gb_KeyMatrix.Size = new Size(416, 376);
+            Gb_KeyMatrix.Padding = new Padding(2);
+            Gb_KeyMatrix.Size = new Size(256, 235);
             Gb_KeyMatrix.TabIndex = 45;
             Gb_KeyMatrix.TabStop = false;
             Gb_KeyMatrix.Text = "Key Matrix";
@@ -164,9 +194,10 @@
             // 
             Lbl_M53.AutoSize = true;
             Lbl_M53.Font = new Font("Segoe UI", 9F);
-            Lbl_M53.Location = new Point(191, 324);
+            Lbl_M53.Location = new Point(118, 202);
+            Lbl_M53.Margin = new Padding(2, 0, 2, 0);
             Lbl_M53.Name = "Lbl_M53";
-            Lbl_M53.Size = new Size(29, 32);
+            Lbl_M53.Size = new Size(19, 20);
             Lbl_M53.TabIndex = 64;
             Lbl_M53.Text = "A";
             // 
@@ -174,9 +205,10 @@
             // 
             Lbl_M54.AutoSize = true;
             Lbl_M54.Font = new Font("Segoe UI", 9F);
-            Lbl_M54.Location = new Point(268, 324);
+            Lbl_M54.Location = new Point(165, 202);
+            Lbl_M54.Margin = new Padding(2, 0, 2, 0);
             Lbl_M54.Name = "Lbl_M54";
-            Lbl_M54.Size = new Size(29, 32);
+            Lbl_M54.Size = new Size(19, 20);
             Lbl_M54.TabIndex = 63;
             Lbl_M54.Text = "A";
             // 
@@ -184,9 +216,10 @@
             // 
             Lbl_M55.AutoSize = true;
             Lbl_M55.Font = new Font("Segoe UI", 9F);
-            Lbl_M55.Location = new Point(343, 324);
+            Lbl_M55.Location = new Point(211, 202);
+            Lbl_M55.Margin = new Padding(2, 0, 2, 0);
             Lbl_M55.Name = "Lbl_M55";
-            Lbl_M55.Size = new Size(29, 32);
+            Lbl_M55.Size = new Size(19, 20);
             Lbl_M55.TabIndex = 62;
             Lbl_M55.Text = "A";
             // 
@@ -194,9 +227,10 @@
             // 
             Lbl_M52.AutoSize = true;
             Lbl_M52.Font = new Font("Segoe UI", 9F);
-            Lbl_M52.Location = new Point(112, 324);
+            Lbl_M52.Location = new Point(69, 202);
+            Lbl_M52.Margin = new Padding(2, 0, 2, 0);
             Lbl_M52.Name = "Lbl_M52";
-            Lbl_M52.Size = new Size(29, 32);
+            Lbl_M52.Size = new Size(19, 20);
             Lbl_M52.TabIndex = 61;
             Lbl_M52.Text = "A";
             // 
@@ -204,9 +238,10 @@
             // 
             Lbl_M51.AutoSize = true;
             Lbl_M51.Font = new Font("Segoe UI", 9F);
-            Lbl_M51.Location = new Point(41, 324);
+            Lbl_M51.Location = new Point(25, 202);
+            Lbl_M51.Margin = new Padding(2, 0, 2, 0);
             Lbl_M51.Name = "Lbl_M51";
-            Lbl_M51.Size = new Size(29, 32);
+            Lbl_M51.Size = new Size(19, 20);
             Lbl_M51.TabIndex = 60;
             Lbl_M51.Text = "A";
             // 
@@ -214,9 +249,10 @@
             // 
             Lbl_M43.AutoSize = true;
             Lbl_M43.Font = new Font("Segoe UI", 9F);
-            Lbl_M43.Location = new Point(191, 254);
+            Lbl_M43.Location = new Point(118, 159);
+            Lbl_M43.Margin = new Padding(2, 0, 2, 0);
             Lbl_M43.Name = "Lbl_M43";
-            Lbl_M43.Size = new Size(29, 32);
+            Lbl_M43.Size = new Size(19, 20);
             Lbl_M43.TabIndex = 59;
             Lbl_M43.Text = "A";
             // 
@@ -224,9 +260,10 @@
             // 
             Lbl_M44.AutoSize = true;
             Lbl_M44.Font = new Font("Segoe UI", 9F);
-            Lbl_M44.Location = new Point(268, 254);
+            Lbl_M44.Location = new Point(165, 159);
+            Lbl_M44.Margin = new Padding(2, 0, 2, 0);
             Lbl_M44.Name = "Lbl_M44";
-            Lbl_M44.Size = new Size(29, 32);
+            Lbl_M44.Size = new Size(19, 20);
             Lbl_M44.TabIndex = 58;
             Lbl_M44.Text = "A";
             // 
@@ -234,9 +271,10 @@
             // 
             Lbl_M45.AutoSize = true;
             Lbl_M45.Font = new Font("Segoe UI", 9F);
-            Lbl_M45.Location = new Point(343, 254);
+            Lbl_M45.Location = new Point(211, 159);
+            Lbl_M45.Margin = new Padding(2, 0, 2, 0);
             Lbl_M45.Name = "Lbl_M45";
-            Lbl_M45.Size = new Size(29, 32);
+            Lbl_M45.Size = new Size(19, 20);
             Lbl_M45.TabIndex = 57;
             Lbl_M45.Text = "A";
             // 
@@ -244,9 +282,10 @@
             // 
             Lbl_M42.AutoSize = true;
             Lbl_M42.Font = new Font("Segoe UI", 9F);
-            Lbl_M42.Location = new Point(112, 254);
+            Lbl_M42.Location = new Point(69, 159);
+            Lbl_M42.Margin = new Padding(2, 0, 2, 0);
             Lbl_M42.Name = "Lbl_M42";
-            Lbl_M42.Size = new Size(29, 32);
+            Lbl_M42.Size = new Size(19, 20);
             Lbl_M42.TabIndex = 56;
             Lbl_M42.Text = "A";
             // 
@@ -254,9 +293,10 @@
             // 
             Lbl_M41.AutoSize = true;
             Lbl_M41.Font = new Font("Segoe UI", 9F);
-            Lbl_M41.Location = new Point(41, 254);
+            Lbl_M41.Location = new Point(25, 159);
+            Lbl_M41.Margin = new Padding(2, 0, 2, 0);
             Lbl_M41.Name = "Lbl_M41";
-            Lbl_M41.Size = new Size(29, 32);
+            Lbl_M41.Size = new Size(19, 20);
             Lbl_M41.TabIndex = 55;
             Lbl_M41.Text = "A";
             // 
@@ -264,9 +304,10 @@
             // 
             Lbl_M33.AutoSize = true;
             Lbl_M33.Font = new Font("Segoe UI", 9F);
-            Lbl_M33.Location = new Point(191, 189);
+            Lbl_M33.Location = new Point(118, 118);
+            Lbl_M33.Margin = new Padding(2, 0, 2, 0);
             Lbl_M33.Name = "Lbl_M33";
-            Lbl_M33.Size = new Size(29, 32);
+            Lbl_M33.Size = new Size(19, 20);
             Lbl_M33.TabIndex = 54;
             Lbl_M33.Text = "A";
             // 
@@ -274,9 +315,10 @@
             // 
             Lbl_M34.AutoSize = true;
             Lbl_M34.Font = new Font("Segoe UI", 9F);
-            Lbl_M34.Location = new Point(268, 189);
+            Lbl_M34.Location = new Point(165, 118);
+            Lbl_M34.Margin = new Padding(2, 0, 2, 0);
             Lbl_M34.Name = "Lbl_M34";
-            Lbl_M34.Size = new Size(29, 32);
+            Lbl_M34.Size = new Size(19, 20);
             Lbl_M34.TabIndex = 53;
             Lbl_M34.Text = "A";
             // 
@@ -284,9 +326,10 @@
             // 
             Lbl_M35.AutoSize = true;
             Lbl_M35.Font = new Font("Segoe UI", 9F);
-            Lbl_M35.Location = new Point(343, 189);
+            Lbl_M35.Location = new Point(211, 118);
+            Lbl_M35.Margin = new Padding(2, 0, 2, 0);
             Lbl_M35.Name = "Lbl_M35";
-            Lbl_M35.Size = new Size(29, 32);
+            Lbl_M35.Size = new Size(19, 20);
             Lbl_M35.TabIndex = 52;
             Lbl_M35.Text = "A";
             // 
@@ -294,9 +337,10 @@
             // 
             Lbl_M32.AutoSize = true;
             Lbl_M32.Font = new Font("Segoe UI", 9F);
-            Lbl_M32.Location = new Point(112, 189);
+            Lbl_M32.Location = new Point(69, 118);
+            Lbl_M32.Margin = new Padding(2, 0, 2, 0);
             Lbl_M32.Name = "Lbl_M32";
-            Lbl_M32.Size = new Size(29, 32);
+            Lbl_M32.Size = new Size(19, 20);
             Lbl_M32.TabIndex = 51;
             Lbl_M32.Text = "A";
             // 
@@ -304,9 +348,10 @@
             // 
             Lbl_M31.AutoSize = true;
             Lbl_M31.Font = new Font("Segoe UI", 9F);
-            Lbl_M31.Location = new Point(41, 189);
+            Lbl_M31.Location = new Point(25, 118);
+            Lbl_M31.Margin = new Padding(2, 0, 2, 0);
             Lbl_M31.Name = "Lbl_M31";
-            Lbl_M31.Size = new Size(29, 32);
+            Lbl_M31.Size = new Size(19, 20);
             Lbl_M31.TabIndex = 50;
             Lbl_M31.Text = "A";
             // 
@@ -314,9 +359,10 @@
             // 
             Lbl_M23.AutoSize = true;
             Lbl_M23.Font = new Font("Segoe UI", 9F);
-            Lbl_M23.Location = new Point(191, 122);
+            Lbl_M23.Location = new Point(118, 76);
+            Lbl_M23.Margin = new Padding(2, 0, 2, 0);
             Lbl_M23.Name = "Lbl_M23";
-            Lbl_M23.Size = new Size(29, 32);
+            Lbl_M23.Size = new Size(19, 20);
             Lbl_M23.TabIndex = 49;
             Lbl_M23.Text = "A";
             // 
@@ -324,9 +370,10 @@
             // 
             Lbl_M24.AutoSize = true;
             Lbl_M24.Font = new Font("Segoe UI", 9F);
-            Lbl_M24.Location = new Point(268, 122);
+            Lbl_M24.Location = new Point(165, 76);
+            Lbl_M24.Margin = new Padding(2, 0, 2, 0);
             Lbl_M24.Name = "Lbl_M24";
-            Lbl_M24.Size = new Size(29, 32);
+            Lbl_M24.Size = new Size(19, 20);
             Lbl_M24.TabIndex = 48;
             Lbl_M24.Text = "A";
             // 
@@ -334,9 +381,10 @@
             // 
             Lbl_M25.AutoSize = true;
             Lbl_M25.Font = new Font("Segoe UI", 9F);
-            Lbl_M25.Location = new Point(343, 122);
+            Lbl_M25.Location = new Point(211, 76);
+            Lbl_M25.Margin = new Padding(2, 0, 2, 0);
             Lbl_M25.Name = "Lbl_M25";
-            Lbl_M25.Size = new Size(29, 32);
+            Lbl_M25.Size = new Size(19, 20);
             Lbl_M25.TabIndex = 47;
             Lbl_M25.Text = "A";
             // 
@@ -344,9 +392,10 @@
             // 
             Lbl_M22.AutoSize = true;
             Lbl_M22.Font = new Font("Segoe UI", 9F);
-            Lbl_M22.Location = new Point(112, 122);
+            Lbl_M22.Location = new Point(69, 76);
+            Lbl_M22.Margin = new Padding(2, 0, 2, 0);
             Lbl_M22.Name = "Lbl_M22";
-            Lbl_M22.Size = new Size(29, 32);
+            Lbl_M22.Size = new Size(19, 20);
             Lbl_M22.TabIndex = 46;
             Lbl_M22.Text = "A";
             // 
@@ -354,9 +403,10 @@
             // 
             Lbl_M21.AutoSize = true;
             Lbl_M21.Font = new Font("Segoe UI", 9F);
-            Lbl_M21.Location = new Point(41, 122);
+            Lbl_M21.Location = new Point(25, 76);
+            Lbl_M21.Margin = new Padding(2, 0, 2, 0);
             Lbl_M21.Name = "Lbl_M21";
-            Lbl_M21.Size = new Size(29, 32);
+            Lbl_M21.Size = new Size(19, 20);
             Lbl_M21.TabIndex = 45;
             Lbl_M21.Text = "A";
             // 
@@ -364,9 +414,10 @@
             // 
             Lbl_M13.AutoSize = true;
             Lbl_M13.Font = new Font("Segoe UI", 9F);
-            Lbl_M13.Location = new Point(191, 52);
+            Lbl_M13.Location = new Point(118, 32);
+            Lbl_M13.Margin = new Padding(2, 0, 2, 0);
             Lbl_M13.Name = "Lbl_M13";
-            Lbl_M13.Size = new Size(29, 32);
+            Lbl_M13.Size = new Size(19, 20);
             Lbl_M13.TabIndex = 44;
             Lbl_M13.Text = "A";
             // 
@@ -374,9 +425,10 @@
             // 
             Lbl_M14.AutoSize = true;
             Lbl_M14.Font = new Font("Segoe UI", 9F);
-            Lbl_M14.Location = new Point(268, 52);
+            Lbl_M14.Location = new Point(165, 32);
+            Lbl_M14.Margin = new Padding(2, 0, 2, 0);
             Lbl_M14.Name = "Lbl_M14";
-            Lbl_M14.Size = new Size(29, 32);
+            Lbl_M14.Size = new Size(19, 20);
             Lbl_M14.TabIndex = 43;
             Lbl_M14.Text = "A";
             // 
@@ -384,9 +436,10 @@
             // 
             Lbl_M15.AutoSize = true;
             Lbl_M15.Font = new Font("Segoe UI", 9F);
-            Lbl_M15.Location = new Point(343, 52);
+            Lbl_M15.Location = new Point(211, 32);
+            Lbl_M15.Margin = new Padding(2, 0, 2, 0);
             Lbl_M15.Name = "Lbl_M15";
-            Lbl_M15.Size = new Size(29, 32);
+            Lbl_M15.Size = new Size(19, 20);
             Lbl_M15.TabIndex = 42;
             Lbl_M15.Text = "A";
             // 
@@ -394,9 +447,10 @@
             // 
             Lbl_M12.AutoSize = true;
             Lbl_M12.Font = new Font("Segoe UI", 9F);
-            Lbl_M12.Location = new Point(112, 52);
+            Lbl_M12.Location = new Point(69, 32);
+            Lbl_M12.Margin = new Padding(2, 0, 2, 0);
             Lbl_M12.Name = "Lbl_M12";
-            Lbl_M12.Size = new Size(29, 32);
+            Lbl_M12.Size = new Size(19, 20);
             Lbl_M12.TabIndex = 41;
             Lbl_M12.Text = "A";
             // 
@@ -404,21 +458,24 @@
             // 
             Lbl_M11.AutoSize = true;
             Lbl_M11.Font = new Font("Segoe UI", 9F);
-            Lbl_M11.Location = new Point(41, 52);
+            Lbl_M11.Location = new Point(25, 32);
+            Lbl_M11.Margin = new Padding(2, 0, 2, 0);
             Lbl_M11.Name = "Lbl_M11";
-            Lbl_M11.Size = new Size(29, 32);
+            Lbl_M11.Size = new Size(19, 20);
             Lbl_M11.TabIndex = 40;
             Lbl_M11.Text = "A";
             // 
             // Btn_CopyResult
             // 
             Btn_CopyResult.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Btn_CopyResult.Location = new Point(539, 594);
+            Btn_CopyResult.Location = new Point(332, 371);
+            Btn_CopyResult.Margin = new Padding(2);
             Btn_CopyResult.Name = "Btn_CopyResult";
-            Btn_CopyResult.Size = new Size(187, 46);
+            Btn_CopyResult.Size = new Size(115, 29);
             Btn_CopyResult.TabIndex = 60;
             Btn_CopyResult.Text = "Copy Result";
             Btn_CopyResult.UseVisualStyleBackColor = true;
+            Btn_CopyResult.Click += Btn_CopyResult_Click;
             // 
             // Gb_TextInput
             // 
@@ -428,9 +485,11 @@
             Gb_TextInput.Controls.Add(Lbl_SrcTextInput);
             Gb_TextInput.Controls.Add(Btn_Paste);
             Gb_TextInput.Controls.Add(Rtb_SrcTextInput);
-            Gb_TextInput.Location = new Point(33, 36);
+            Gb_TextInput.Location = new Point(20, 22);
+            Gb_TextInput.Margin = new Padding(2);
             Gb_TextInput.Name = "Gb_TextInput";
-            Gb_TextInput.Size = new Size(520, 397);
+            Gb_TextInput.Padding = new Padding(2);
+            Gb_TextInput.Size = new Size(320, 248);
             Gb_TextInput.TabIndex = 61;
             Gb_TextInput.TabStop = false;
             Gb_TextInput.Text = "Text Input";
@@ -438,83 +497,74 @@
             // Btn_BrowseText
             // 
             Btn_BrowseText.Font = new Font("Segoe UI", 9F);
-            Btn_BrowseText.Location = new Point(188, 329);
+            Btn_BrowseText.Location = new Point(116, 206);
+            Btn_BrowseText.Margin = new Padding(2);
             Btn_BrowseText.Name = "Btn_BrowseText";
-            Btn_BrowseText.Size = new Size(135, 46);
+            Btn_BrowseText.Size = new Size(83, 29);
             Btn_BrowseText.TabIndex = 61;
             Btn_BrowseText.Text = "Browse";
             Btn_BrowseText.UseVisualStyleBackColor = true;
+            Btn_BrowseText.Click += Btn_BrowseText_Click;
             // 
             // Lbl_ImportFileSrc
             // 
             Lbl_ImportFileSrc.AutoSize = true;
             Lbl_ImportFileSrc.Font = new Font("Segoe UI", 9F);
-            Lbl_ImportFileSrc.Location = new Point(35, 336);
+            Lbl_ImportFileSrc.Location = new Point(22, 210);
+            Lbl_ImportFileSrc.Margin = new Padding(2, 0, 2, 0);
             Lbl_ImportFileSrc.Name = "Lbl_ImportFileSrc";
-            Lbl_ImportFileSrc.Size = new Size(130, 32);
+            Lbl_ImportFileSrc.Size = new Size(82, 20);
             Lbl_ImportFileSrc.TabIndex = 60;
             Lbl_ImportFileSrc.Text = "Import file:";
             // 
             // Btn_ClearInputText
             // 
             Btn_ClearInputText.Font = new Font("Segoe UI", 9F);
-            Btn_ClearInputText.Location = new Point(360, 42);
+            Btn_ClearInputText.Location = new Point(222, 26);
+            Btn_ClearInputText.Margin = new Padding(2);
             Btn_ClearInputText.Name = "Btn_ClearInputText";
-            Btn_ClearInputText.Size = new Size(135, 46);
+            Btn_ClearInputText.Size = new Size(83, 29);
             Btn_ClearInputText.TabIndex = 59;
             Btn_ClearInputText.Text = "Clear";
             Btn_ClearInputText.UseVisualStyleBackColor = true;
+            Btn_ClearInputText.Click += Btn_ClearInputText_Click;
             // 
             // Lbl_SrcTextInput
             // 
             Lbl_SrcTextInput.AutoSize = true;
             Lbl_SrcTextInput.Font = new Font("Segoe UI", 9F);
-            Lbl_SrcTextInput.Location = new Point(35, 48);
+            Lbl_SrcTextInput.Location = new Point(22, 30);
+            Lbl_SrcTextInput.Margin = new Padding(2, 0, 2, 0);
             Lbl_SrcTextInput.Name = "Lbl_SrcTextInput";
-            Lbl_SrcTextInput.Size = new Size(121, 32);
+            Lbl_SrcTextInput.Size = new Size(75, 20);
             Lbl_SrcTextInput.TabIndex = 58;
             Lbl_SrcTextInput.Text = "Enter text:";
             // 
             // Btn_Paste
             // 
             Btn_Paste.Font = new Font("Segoe UI", 9F);
-            Btn_Paste.Location = new Point(201, 42);
+            Btn_Paste.Location = new Point(124, 26);
+            Btn_Paste.Margin = new Padding(2);
             Btn_Paste.Name = "Btn_Paste";
-            Btn_Paste.Size = new Size(135, 46);
+            Btn_Paste.Size = new Size(83, 29);
             Btn_Paste.TabIndex = 57;
             Btn_Paste.Text = "Paste";
             Btn_Paste.UseVisualStyleBackColor = true;
+            Btn_Paste.Click += Btn_Paste_Click;
             // 
             // Rtb_SrcTextInput
             // 
             Rtb_SrcTextInput.Font = new Font("Segoe UI", 9F);
-            Rtb_SrcTextInput.Location = new Point(35, 97);
+            Rtb_SrcTextInput.Location = new Point(22, 61);
+            Rtb_SrcTextInput.Margin = new Padding(2);
             Rtb_SrcTextInput.Name = "Rtb_SrcTextInput";
-            Rtb_SrcTextInput.Size = new Size(460, 199);
+            Rtb_SrcTextInput.Size = new Size(285, 126);
             Rtb_SrcTextInput.TabIndex = 56;
             Rtb_SrcTextInput.Text = "";
             // 
-            // Rtb_KeyInput
-            // 
-            Rtb_KeyInput.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Rtb_KeyInput.Location = new Point(116, 53);
-            Rtb_KeyInput.Name = "Rtb_KeyInput";
-            Rtb_KeyInput.Size = new Size(456, 48);
-            Rtb_KeyInput.TabIndex = 60;
-            Rtb_KeyInput.Text = "";
-            // 
-            // Lbl_KeyInput
-            // 
-            Lbl_KeyInput.AutoSize = true;
-            Lbl_KeyInput.Location = new Point(31, 61);
-            Lbl_KeyInput.Name = "Lbl_KeyInput";
-            Lbl_KeyInput.Size = new Size(58, 32);
-            Lbl_KeyInput.TabIndex = 58;
-            Lbl_KeyInput.Text = "Key:";
-            // 
             // PlayFairControl
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(Gb_TextInput);
             Controls.Add(Btn_CopyResult);
@@ -523,8 +573,9 @@
             Controls.Add(Rtb_Result);
             Controls.Add(Lbl_Result);
             Controls.Add(Btn_Encrypt);
+            Margin = new Padding(2);
             Name = "PlayFairControl";
-            Size = new Size(1300, 1000);
+            Size = new Size(800, 625);
             Gb_KeyInput.ResumeLayout(false);
             Gb_KeyInput.PerformLayout();
             Gb_KeyMatrix.ResumeLayout(false);

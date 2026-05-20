@@ -48,18 +48,20 @@
             TbCtrl_Algorithms.Controls.Add(Tab_Vigenere);
             TbCtrl_Algorithms.Dock = DockStyle.Fill;
             TbCtrl_Algorithms.Location = new Point(0, 0);
+            TbCtrl_Algorithms.Margin = new Padding(2, 2, 2, 2);
             TbCtrl_Algorithms.Name = "TbCtrl_Algorithms";
             TbCtrl_Algorithms.SelectedIndex = 0;
-            TbCtrl_Algorithms.Size = new Size(1374, 1005);
+            TbCtrl_Algorithms.Size = new Size(846, 628);
             TbCtrl_Algorithms.TabIndex = 0;
             // 
             // Tab_PlayFair
             // 
             Tab_PlayFair.Controls.Add(PlayFairControl);
-            Tab_PlayFair.Location = new Point(8, 46);
+            Tab_PlayFair.Location = new Point(4, 29);
+            Tab_PlayFair.Margin = new Padding(2, 2, 2, 2);
             Tab_PlayFair.Name = "Tab_PlayFair";
-            Tab_PlayFair.Padding = new Padding(3);
-            Tab_PlayFair.Size = new Size(1358, 951);
+            Tab_PlayFair.Padding = new Padding(2, 2, 2, 2);
+            Tab_PlayFair.Size = new Size(838, 595);
             Tab_PlayFair.TabIndex = 0;
             Tab_PlayFair.Text = "PlayFair";
             Tab_PlayFair.UseVisualStyleBackColor = true;
@@ -67,18 +69,20 @@
             // PlayFairControl
             // 
             PlayFairControl.Dock = DockStyle.Fill;
-            PlayFairControl.Location = new Point(3, 3);
+            PlayFairControl.Location = new Point(2, 2);
+            PlayFairControl.Margin = new Padding(1, 1, 1, 1);
             PlayFairControl.Name = "PlayFairControl";
-            PlayFairControl.Size = new Size(1352, 945);
+            PlayFairControl.Size = new Size(834, 591);
             PlayFairControl.TabIndex = 0;
             // 
             // Tab_RSA
             // 
             Tab_RSA.Controls.Add(RSAControl);
-            Tab_RSA.Location = new Point(8, 46);
+            Tab_RSA.Location = new Point(4, 29);
+            Tab_RSA.Margin = new Padding(2, 2, 2, 2);
             Tab_RSA.Name = "Tab_RSA";
-            Tab_RSA.Padding = new Padding(3);
-            Tab_RSA.Size = new Size(1358, 951);
+            Tab_RSA.Padding = new Padding(2, 2, 2, 2);
+            Tab_RSA.Size = new Size(838, 595);
             Tab_RSA.TabIndex = 1;
             Tab_RSA.Text = "RSA";
             Tab_RSA.UseVisualStyleBackColor = true;
@@ -86,19 +90,21 @@
             // RSAControl
             // 
             RSAControl.Dock = DockStyle.Fill;
-            RSAControl.Location = new Point(3, 3);
+            RSAControl.Location = new Point(2, 2);
+            RSAControl.Margin = new Padding(1, 1, 1, 1);
             RSAControl.Name = "RSAControl";
-            RSAControl.Size = new Size(1352, 945);
+            RSAControl.Size = new Size(834, 591);
             RSAControl.TabIndex = 0;
             RSAControl.Load += rsaControl1_Load;
             // 
             // Tab_Vigenere
             // 
             Tab_Vigenere.Controls.Add(VigenereControl);
-            Tab_Vigenere.Location = new Point(8, 46);
+            Tab_Vigenere.Location = new Point(4, 29);
+            Tab_Vigenere.Margin = new Padding(2, 2, 2, 2);
             Tab_Vigenere.Name = "Tab_Vigenere";
-            Tab_Vigenere.Padding = new Padding(3);
-            Tab_Vigenere.Size = new Size(1358, 951);
+            Tab_Vigenere.Padding = new Padding(2, 2, 2, 2);
+            Tab_Vigenere.Size = new Size(838, 595);
             Tab_Vigenere.TabIndex = 2;
             Tab_Vigenere.Text = "Vigenère";
             Tab_Vigenere.UseVisualStyleBackColor = true;
@@ -106,17 +112,19 @@
             // VigenereControl
             // 
             VigenereControl.Dock = DockStyle.Fill;
-            VigenereControl.Location = new Point(3, 3);
+            VigenereControl.Location = new Point(2, 2);
+            VigenereControl.Margin = new Padding(1, 1, 1, 1);
             VigenereControl.Name = "VigenereControl";
-            VigenereControl.Size = new Size(1352, 945);
+            VigenereControl.Size = new Size(834, 591);
             VigenereControl.TabIndex = 0;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1374, 1005);
+            ClientSize = new Size(846, 628);
             Controls.Add(TbCtrl_Algorithms);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Main Form";
