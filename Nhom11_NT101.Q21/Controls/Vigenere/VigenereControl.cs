@@ -24,7 +24,10 @@ namespace Nhom11_NT101.Q21.Controls.Vigenere
 
         private void Btn_Paste_Click(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (Clipboard.ContainsText())
+            {
+                Rtb_SrcTextInput.Text = Clipboard.GetText();
+            }
         }
 
         private void Btn_Encrypt_Click(object? sender, EventArgs e)
@@ -96,17 +99,38 @@ namespace Nhom11_NT101.Q21.Controls.Vigenere
 
         private void Btn_Copy_Click(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (!string.IsNullOrEmpty(Rtb_Result.Text))
+            {
+                Clipboard.SetText(Rtb_Result.Text);
+                MessageBox.Show("Copied to clipboard!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void Btn_ClearInputText_Click(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Rtb_SrcTextInput.Clear();
         }
 
         private void Btn_Browse_Click(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+                openFileDialog.Title = "Select a text file to import";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        string fileContent = System.IO.File.ReadAllText(openFileDialog.FileName);
+                        Rtb_SrcTextInput.Text = fileContent;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error reading file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         
