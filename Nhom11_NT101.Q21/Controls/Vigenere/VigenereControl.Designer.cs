@@ -46,7 +46,7 @@
             // Btn_Browse
             // 
             Btn_Browse.Font = new Font("Segoe UI", 9F);
-            Btn_Browse.Location = new Point(218, 679);
+            Btn_Browse.Location = new Point(218, 681);
             Btn_Browse.Name = "Btn_Browse";
             Btn_Browse.Size = new Size(137, 57);
             Btn_Browse.TabIndex = 31;
