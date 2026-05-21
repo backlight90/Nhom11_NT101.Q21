@@ -124,7 +124,6 @@ namespace Nhom11_NT101.Q21.Algorithms.RSA
             if (string.IsNullOrEmpty(cipherText))
                 throw new ArgumentException("Ciphertext không được rỗng.");
 
-            // Nếu keyXml là đường dẫn file thì đọc file
             string resolvedKey = keyXml;
             if (System.IO.File.Exists(keyXml))
             {
