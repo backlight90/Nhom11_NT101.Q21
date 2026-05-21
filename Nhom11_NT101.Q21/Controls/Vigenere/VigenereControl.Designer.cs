@@ -45,10 +45,10 @@
             // 
             // Btn_Browse
             // 
-            Btn_Browse.Font = new Font("Segoe UI", 10.875F);
-            Btn_Browse.Location = new Point(223, 693);
+            Btn_Browse.Font = new Font("Segoe UI", 9F);
+            Btn_Browse.Location = new Point(218, 681);
             Btn_Browse.Name = "Btn_Browse";
-            Btn_Browse.Size = new Size(137, 46);
+            Btn_Browse.Size = new Size(137, 57);
             Btn_Browse.TabIndex = 31;
             Btn_Browse.Text = "Browse";
             Btn_Browse.UseVisualStyleBackColor = true;
@@ -56,26 +56,26 @@
             // Lbl_FileSrc
             // 
             Lbl_FileSrc.AutoSize = true;
-            Lbl_FileSrc.Font = new Font("Segoe UI", 10.875F);
+            Lbl_FileSrc.Font = new Font("Segoe UI", 9F);
             Lbl_FileSrc.Location = new Point(49, 693);
             Lbl_FileSrc.Name = "Lbl_FileSrc";
-            Lbl_FileSrc.Size = new Size(156, 40);
+            Lbl_FileSrc.Size = new Size(130, 32);
             Lbl_FileSrc.TabIndex = 30;
             Lbl_FileSrc.Text = "Import file:";
             // 
             // Btn_ClearInputText
             // 
-            Btn_ClearInputText.Font = new Font("Segoe UI", 10.875F);
-            Btn_ClearInputText.Location = new Point(464, 151);
+            Btn_ClearInputText.Font = new Font("Segoe UI", 9F);
+            Btn_ClearInputText.Location = new Point(464, 140);
             Btn_ClearInputText.Name = "Btn_ClearInputText";
-            Btn_ClearInputText.Size = new Size(137, 46);
+            Btn_ClearInputText.Size = new Size(137, 57);
             Btn_ClearInputText.TabIndex = 29;
             Btn_ClearInputText.Text = "Clear";
             Btn_ClearInputText.UseVisualStyleBackColor = true;
             // 
             // Btn_Decrypt
             // 
-            Btn_Decrypt.Font = new Font("Segoe UI", 10.875F);
+            Btn_Decrypt.Font = new Font("Segoe UI", 9F);
             Btn_Decrypt.Location = new Point(672, 805);
             Btn_Decrypt.Name = "Btn_Decrypt";
             Btn_Decrypt.Size = new Size(285, 71);
@@ -85,7 +85,7 @@
             // 
             // Btn_Encrypt
             // 
-            Btn_Encrypt.Font = new Font("Segoe UI", 10.875F);
+            Btn_Encrypt.Font = new Font("Segoe UI", 9F);
             Btn_Encrypt.Location = new Point(316, 805);
             Btn_Encrypt.Name = "Btn_Encrypt";
             Btn_Encrypt.Size = new Size(285, 71);
@@ -95,17 +95,17 @@
             // 
             // Btn_Copy
             // 
-            Btn_Copy.Font = new Font("Segoe UI", 10.875F);
-            Btn_Copy.Location = new Point(1114, 148);
+            Btn_Copy.Font = new Font("Segoe UI", 9F);
+            Btn_Copy.Location = new Point(1114, 140);
             Btn_Copy.Name = "Btn_Copy";
-            Btn_Copy.Size = new Size(137, 46);
+            Btn_Copy.Size = new Size(137, 54);
             Btn_Copy.TabIndex = 26;
             Btn_Copy.Text = "Copy";
             Btn_Copy.UseVisualStyleBackColor = true;
             // 
             // Rtb_Result
             // 
-            Rtb_Result.Font = new Font("Segoe UI", 10.875F);
+            Rtb_Result.Font = new Font("Segoe UI", 9F);
             Rtb_Result.Location = new Point(699, 214);
             Rtb_Result.Name = "Rtb_Result";
             Rtb_Result.ReadOnly = true;
@@ -116,46 +116,46 @@
             // Lbl_Result
             // 
             Lbl_Result.AutoSize = true;
-            Lbl_Result.Font = new Font("Segoe UI", 10.875F);
+            Lbl_Result.Font = new Font("Segoe UI", 9F);
             Lbl_Result.Location = new Point(699, 151);
             Lbl_Result.Name = "Lbl_Result";
-            Lbl_Result.Size = new Size(99, 40);
+            Lbl_Result.Size = new Size(83, 32);
             Lbl_Result.TabIndex = 24;
             Lbl_Result.Text = "Result:";
             // 
             // Lbl_SrcTextInput
             // 
             Lbl_SrcTextInput.AutoSize = true;
-            Lbl_SrcTextInput.Font = new Font("Segoe UI", 10.875F);
+            Lbl_SrcTextInput.Font = new Font("Segoe UI", 9F);
             Lbl_SrcTextInput.Location = new Point(49, 151);
             Lbl_SrcTextInput.Name = "Lbl_SrcTextInput";
-            Lbl_SrcTextInput.Size = new Size(145, 40);
+            Lbl_SrcTextInput.Size = new Size(121, 32);
             Lbl_SrcTextInput.TabIndex = 23;
             Lbl_SrcTextInput.Text = "Enter text:";
             // 
             // Lbl_KeyInput
             // 
             Lbl_KeyInput.AutoSize = true;
-            Lbl_KeyInput.Font = new Font("Segoe UI", 10.875F);
+            Lbl_KeyInput.Font = new Font("Segoe UI", 9F);
             Lbl_KeyInput.Location = new Point(45, 50);
             Lbl_KeyInput.Name = "Lbl_KeyInput";
-            Lbl_KeyInput.Size = new Size(140, 40);
+            Lbl_KeyInput.Size = new Size(118, 32);
             Lbl_KeyInput.TabIndex = 22;
             Lbl_KeyInput.Text = "Enter key:";
             // 
             // Btn_Paste
             // 
-            Btn_Paste.Font = new Font("Segoe UI", 10.875F);
-            Btn_Paste.Location = new Point(305, 151);
+            Btn_Paste.Font = new Font("Segoe UI", 9F);
+            Btn_Paste.Location = new Point(305, 140);
             Btn_Paste.Name = "Btn_Paste";
-            Btn_Paste.Size = new Size(137, 46);
+            Btn_Paste.Size = new Size(137, 57);
             Btn_Paste.TabIndex = 21;
             Btn_Paste.Text = "Paste";
             Btn_Paste.UseVisualStyleBackColor = true;
             // 
             // Rtb_SrcTextInput
             // 
-            Rtb_SrcTextInput.Font = new Font("Segoe UI", 10.875F);
+            Rtb_SrcTextInput.Font = new Font("Segoe UI", 9F);
             Rtb_SrcTextInput.Location = new Point(49, 214);
             Rtb_SrcTextInput.Name = "Rtb_SrcTextInput";
             Rtb_SrcTextInput.Size = new Size(552, 444);
@@ -164,7 +164,7 @@
             // 
             // Tb_KeyInput
             // 
-            Tb_KeyInput.Font = new Font("Segoe UI", 10.875F);
+            Tb_KeyInput.Font = new Font("Segoe UI", 9F);
             Tb_KeyInput.Location = new Point(191, 47);
             Tb_KeyInput.Multiline = true;
             Tb_KeyInput.Name = "Tb_KeyInput";
