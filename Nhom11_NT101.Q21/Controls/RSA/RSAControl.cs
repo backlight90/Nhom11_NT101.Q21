@@ -237,18 +237,7 @@ namespace Nhom11_NT101.Q21.Controls.RSA
                     return;
                 }
 
-                // Đọc file key, nếu có PIN thì truyền vào để giải mã file
-                string keyXml = System.IO.File.ReadAllText(
-                    keyPath, System.Text.Encoding.UTF8);
-
-                if (!string.IsNullOrEmpty(pin))
-                {
-                    // Giải mã nội dung file key bằng PIN
-                    // (dùng hàm internal — cần expose hoặc xử lý khác)
-                    // Giải pháp đơn giản: gọi Decrypt với pin
-                }
-
-                string result = _rsaService.Decrypt(inputText, keyXml);
+                string result = _rsaService.Decrypt(inputText, keyPath, pin);
                 Rtb_Result.Text = result;
             }
             catch (Exception ex)
