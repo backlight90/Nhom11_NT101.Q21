@@ -215,5 +215,68 @@ namespace Nhom11_NT101.Q21.Algorithms.RSA
                 return sha.ComputeHash(Encoding.UTF8.GetBytes(pin));
             }
         }
+
+        public string SignData(string plainText, string keyXml)
+        {
+            if (string.IsNullOrEmpty(plainText))
+                throw new ArgumentException("Plaintext không được rỗng.");
+
+            string resolvedKey = keyXml;
+            if (System.IO.File.Exists(keyXml))
+            {
+                resolvedKey = System.IO.File.ReadAllText(keyXml, Encoding.UTF8);
+            }
+
+            using (var rsa = new RSACryptoServiceProvider())
+            {
+                rsa.PersistKeyInCsp = false;
+                rsa.FromXmlString(resolvedKey);
+
+                byte[] dataBytes = Encoding.UTF8.GetBytes(plainText);
+
+                using (var sha256 = SHA256.Create())
+                {
+                    byte[] hashBytes = sha256.ComputeHash(dataBytes);
+                    byte[] signatureBytes = rsa.SignHash(hashBytes, CryptoConfig.MapNameToOID("SHA256"));
+                    return Convert.ToBase64String(signatureBytes);
+                }
+            }
+        }
+
+        public bool VerifySignature(string plainText, string signature, string keyXml)
+        {
+            if (string.IsNullOrEmpty(plainText))
+                throw new ArgumentException("Plaintext không được rỗng.");
+            if (string.IsNullOrEmpty(signature))
+                throw new ArgumentException("Signature không được rỗng.");
+
+            try
+            {
+                string resolvedKey = keyXml;
+                if (System.IO.File.Exists(keyXml))
+                {
+                    resolvedKey = System.IO.File.ReadAllText(keyXml, Encoding.UTF8);
+                }
+
+                using (var rsa = new RSACryptoServiceProvider())
+                {
+                    rsa.PersistKeyInCsp = false;
+                    rsa.FromXmlString(resolvedKey);
+
+                    byte[] dataBytes = Encoding.UTF8.GetBytes(plainText);
+                    byte[] signatureBytes = Convert.FromBase64String(signature.Trim());
+
+                    using (var sha256 = SHA256.Create())
+                    {
+                        byte[] hashBytes = sha256.ComputeHash(dataBytes);
+                        return rsa.VerifyHash(hashBytes, CryptoConfig.MapNameToOID("SHA256"), signatureBytes);
+                    }
+                }
+            }
+            catch (FormatException)
+            {
+                throw new ArgumentException("Chữ ký không phải định dạng Base64 hợp lệ.");
+            }
+        }
     }
 }

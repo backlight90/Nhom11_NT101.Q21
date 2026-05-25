@@ -258,5 +258,138 @@ namespace Nhom11_NT101.Q21.Controls.RSA
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void Btn_BrowseSignatureText_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new OpenFileDialog())
+            {
+                dialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    Rtb_SignatureTextInput.Text = System.IO.File.ReadAllText(
+                        dialog.FileName, System.Text.Encoding.UTF8);
+                }
+            }
+        }
+
+        private void Btn_BrowseSignatureKey_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new OpenFileDialog())
+            {
+                dialog.Filter = "XML files (*.xml)|*.xml";
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    Rtb_SignatureKeyInput.Text = dialog.FileName;
+                }
+            }
+        }
+
+        private void Btn_Sign_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string inputText = Rtb_SignatureTextInput.Text;
+                string keyPath = Rtb_SignatureKeyInput.Text;
+
+                if (string.IsNullOrWhiteSpace(inputText))
+                {
+                    MessageBox.Show("Nhập text cần ký!", "Cảnh báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(keyPath))
+                {
+                    MessageBox.Show("Chọn file Private Key (.xml)!", "Cảnh báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string keyXml = System.IO.File.ReadAllText(
+                    keyPath, System.Text.Encoding.UTF8);
+
+                string signature = _rsaService.SignData(inputText, keyXml);
+                Rtb_SignatureResult.Text = signature;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi ký: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Btn_Verify_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string inputText = Rtb_SignatureTextInput.Text;
+                string signature = Rtb_SignatureResult.Text;
+                string keyPath = Rtb_SignatureKeyInput.Text;
+
+                if (string.IsNullOrWhiteSpace(inputText))
+                {
+                    MessageBox.Show("Nhập text cần kiểm tra!", "Cảnh báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(signature))
+                {
+                    MessageBox.Show("Nhập chữ ký!", "Cảnh báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(keyPath))
+                {
+                    MessageBox.Show("Chọn file Public Key (.xml)!", "Cảnh báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string keyXml = System.IO.File.ReadAllText(
+                    keyPath, System.Text.Encoding.UTF8);
+
+                signature = signature.Trim();
+                bool isValid = _rsaService.VerifySignature(inputText, signature, keyXml);
+                if (isValid)
+                {
+                    MessageBox.Show("Chữ ký hợp lệ!", "Kết quả",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Rtb_SignatureResult.Text = "SIGNATURE VALID ✓";
+                }
+                else
+                {
+                    MessageBox.Show("Chữ ký không hợp lệ!", "Kết quả",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Rtb_SignatureResult.Text = "SIGNATURE INVALID ✗";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi kiểm tra: " + ex.Message + "\n\nStackTrace: " + ex.StackTrace, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Btn_CopySignatureResult_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(Rtb_SignatureResult.Text))
+            {
+                Clipboard.SetText(Rtb_SignatureResult.Text);
+                MessageBox.Show("Đã copy kết quả!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void Btn_ClearSignatureInputText_Click(object sender, EventArgs e)
+        {
+            Rtb_SignatureTextInput.Clear();
+            Rtb_SignatureResult.Clear();
+        }
+
+        private void Btn_PasteSignature_Click(object sender, EventArgs e)
+        {
+            Rtb_SignatureTextInput.Text = Clipboard.GetText();
+        }
     }
 }

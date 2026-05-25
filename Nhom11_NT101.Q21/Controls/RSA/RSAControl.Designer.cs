@@ -48,6 +48,25 @@
             Lbl_KeySize = new Label();
             tabPage2 = new TabPage();
             Gb_TextInput = new GroupBox();
+            tabPage3 = new TabPage();
+            Gb_SignatureTextInput = new GroupBox();
+            Btn_BrowseSignatureText = new Button();
+            Lbl_ImportFileSignature = new Label();
+            Btn_ClearSignatureInputText = new Button();
+            Lbl_SignatureTextInput = new Label();
+            Btn_PasteSignature = new Button();
+            Rtb_SignatureTextInput = new RichTextBox();
+            Gb_SignatureKeyInput = new GroupBox();
+            Btn_Verify = new Button();
+            Btn_Sign = new Button();
+            Rtb_SignatureKeyInput = new RichTextBox();
+            Btn_BrowseSignatureKey = new Button();
+            Lbl_SignatureKeyInput = new Label();
+            Btn_CopySignatureResult = new Button();
+            Rtb_SignatureResult = new RichTextBox();
+            Lbl_SignatureResult = new Label();
+            Rtb_SignatureInput = new RichTextBox();
+            Lbl_SignatureInput = new Label();
             Btn_BrowseText = new Button();
             Lbl_ImportFileSrc = new Label();
             Btn_ClearInputText = new Button();
@@ -73,12 +92,16 @@
             tabPage2.SuspendLayout();
             Gb_TextInput.SuspendLayout();
             Gb_KeyInput.SuspendLayout();
+            tabPage3.SuspendLayout();
+            Gb_SignatureTextInput.SuspendLayout();
+            Gb_SignatureKeyInput.SuspendLayout();
             SuspendLayout();
             // 
             // TbCtrl_RSAControl
             // 
             TbCtrl_RSAControl.Controls.Add(tabPage1);
             TbCtrl_RSAControl.Controls.Add(tabPage2);
+            TbCtrl_RSAControl.Controls.Add(tabPage3);
             TbCtrl_RSAControl.Dock = DockStyle.Fill;
             TbCtrl_RSAControl.Location = new Point(0, 0);
             TbCtrl_RSAControl.Margin = new Padding(2, 1, 2, 1);
@@ -294,6 +317,22 @@
             tabPage2.Text = "Encryption & Decryption";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // tabPage3
+            // 
+            tabPage3.Controls.Add(Gb_SignatureTextInput);
+            tabPage3.Controls.Add(Btn_CopySignatureResult);
+            tabPage3.Controls.Add(Rtb_SignatureResult);
+            tabPage3.Controls.Add(Lbl_SignatureResult);
+            tabPage3.Controls.Add(Gb_SignatureKeyInput);
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Margin = new Padding(2, 1, 2, 1);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(2, 1, 2, 1);
+            tabPage3.Size = new Size(692, 441);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Digital Signature";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
             // Gb_TextInput
             // 
             Gb_TextInput.Controls.Add(Btn_BrowseText);
@@ -503,6 +542,216 @@
             Lbl_KeyInput.TabIndex = 3;
             Lbl_KeyInput.Text = "Key:";
             // 
+            // Gb_SignatureTextInput
+            // 
+            Gb_SignatureTextInput.Controls.Add(Btn_BrowseSignatureText);
+            Gb_SignatureTextInput.Controls.Add(Lbl_ImportFileSignature);
+            Gb_SignatureTextInput.Controls.Add(Btn_ClearSignatureInputText);
+            Gb_SignatureTextInput.Controls.Add(Lbl_SignatureTextInput);
+            Gb_SignatureTextInput.Controls.Add(Btn_PasteSignature);
+            Gb_SignatureTextInput.Controls.Add(Rtb_SignatureTextInput);
+            Gb_SignatureTextInput.Location = new Point(18, 18);
+            Gb_SignatureTextInput.Margin = new Padding(2, 1, 2, 1);
+            Gb_SignatureTextInput.Name = "Gb_SignatureTextInput";
+            Gb_SignatureTextInput.Padding = new Padding(2, 1, 2, 1);
+            Gb_SignatureTextInput.Size = new Size(280, 186);
+            Gb_SignatureTextInput.TabIndex = 60;
+            Gb_SignatureTextInput.TabStop = false;
+            Gb_SignatureTextInput.Text = "Text Input";
+            // 
+            // Btn_BrowseSignatureText
+            // 
+            Btn_BrowseSignatureText.Font = new Font("Segoe UI", 9F);
+            Btn_BrowseSignatureText.Location = new Point(101, 154);
+            Btn_BrowseSignatureText.Margin = new Padding(2, 1, 2, 1);
+            Btn_BrowseSignatureText.Name = "Btn_BrowseSignatureText";
+            Btn_BrowseSignatureText.Size = new Size(73, 22);
+            Btn_BrowseSignatureText.TabIndex = 61;
+            Btn_BrowseSignatureText.Text = "Browse";
+            Btn_BrowseSignatureText.UseVisualStyleBackColor = true;
+            Btn_BrowseSignatureText.Click += Btn_BrowseSignatureText_Click;
+            // 
+            // Lbl_ImportFileSignature
+            // 
+            Lbl_ImportFileSignature.AutoSize = true;
+            Lbl_ImportFileSignature.Font = new Font("Segoe UI", 9F);
+            Lbl_ImportFileSignature.Location = new Point(19, 158);
+            Lbl_ImportFileSignature.Margin = new Padding(2, 0, 2, 0);
+            Lbl_ImportFileSignature.Name = "Lbl_ImportFileSignature";
+            Lbl_ImportFileSignature.Size = new Size(65, 15);
+            Lbl_ImportFileSignature.TabIndex = 60;
+            Lbl_ImportFileSignature.Text = "Import file:";
+            // 
+            // Btn_ClearSignatureInputText
+            // 
+            Btn_ClearSignatureInputText.Font = new Font("Segoe UI", 9F);
+            Btn_ClearSignatureInputText.Location = new Point(194, 20);
+            Btn_ClearSignatureInputText.Margin = new Padding(2, 1, 2, 1);
+            Btn_ClearSignatureInputText.Name = "Btn_ClearSignatureInputText";
+            Btn_ClearSignatureInputText.Size = new Size(73, 22);
+            Btn_ClearSignatureInputText.TabIndex = 59;
+            Btn_ClearSignatureInputText.Text = "Clear";
+            Btn_ClearSignatureInputText.UseVisualStyleBackColor = true;
+            Btn_ClearSignatureInputText.Click += Btn_ClearSignatureInputText_Click;
+            // 
+            // Lbl_SignatureTextInput
+            // 
+            Lbl_SignatureTextInput.AutoSize = true;
+            Lbl_SignatureTextInput.Font = new Font("Segoe UI", 9F);
+            Lbl_SignatureTextInput.Location = new Point(19, 22);
+            Lbl_SignatureTextInput.Margin = new Padding(2, 0, 2, 0);
+            Lbl_SignatureTextInput.Name = "Lbl_SignatureTextInput";
+            Lbl_SignatureTextInput.Size = new Size(59, 15);
+            Lbl_SignatureTextInput.TabIndex = 58;
+            Lbl_SignatureTextInput.Text = "Enter text:";
+            // 
+            // Btn_PasteSignature
+            // 
+            Btn_PasteSignature.Font = new Font("Segoe UI", 9F);
+            Btn_PasteSignature.Location = new Point(108, 20);
+            Btn_PasteSignature.Margin = new Padding(2, 1, 2, 1);
+            Btn_PasteSignature.Name = "Btn_PasteSignature";
+            Btn_PasteSignature.Size = new Size(73, 22);
+            Btn_PasteSignature.TabIndex = 57;
+            Btn_PasteSignature.Text = "Paste";
+            Btn_PasteSignature.UseVisualStyleBackColor = true;
+            Btn_PasteSignature.Click += Btn_PasteSignature_Click;
+            // 
+            // Rtb_SignatureTextInput
+            // 
+            Rtb_SignatureTextInput.Font = new Font("Segoe UI", 9F);
+            Rtb_SignatureTextInput.Location = new Point(19, 45);
+            Rtb_SignatureTextInput.Margin = new Padding(2, 1, 2, 1);
+            Rtb_SignatureTextInput.Name = "Rtb_SignatureTextInput";
+            Rtb_SignatureTextInput.Size = new Size(250, 95);
+            Rtb_SignatureTextInput.TabIndex = 56;
+            Rtb_SignatureTextInput.Text = "";
+            // 
+            // Gb_SignatureKeyInput
+            // 
+            Gb_SignatureKeyInput.Controls.Add(Btn_Verify);
+            Gb_SignatureKeyInput.Controls.Add(Btn_Sign);
+            Gb_SignatureKeyInput.Controls.Add(Rtb_SignatureKeyInput);
+            Gb_SignatureKeyInput.Controls.Add(Btn_BrowseSignatureKey);
+            Gb_SignatureKeyInput.Controls.Add(Lbl_SignatureKeyInput);
+            Gb_SignatureKeyInput.Location = new Point(328, 18);
+            Gb_SignatureKeyInput.Margin = new Padding(2, 1, 2, 1);
+            Gb_SignatureKeyInput.Name = "Gb_SignatureKeyInput";
+            Gb_SignatureKeyInput.Padding = new Padding(2, 1, 2, 1);
+            Gb_SignatureKeyInput.Size = new Size(352, 186);
+            Gb_SignatureKeyInput.TabIndex = 56;
+            Gb_SignatureKeyInput.TabStop = false;
+            Gb_SignatureKeyInput.Text = "Key Input";
+            // 
+            // Btn_Sign
+            // 
+            Btn_Sign.Location = new Point(54, 110);
+            Btn_Sign.Margin = new Padding(2, 1, 2, 1);
+            Btn_Sign.Name = "Btn_Sign";
+            Btn_Sign.Size = new Size(102, 22);
+            Btn_Sign.TabIndex = 3;
+            Btn_Sign.Text = "Sign";
+            Btn_Sign.UseVisualStyleBackColor = true;
+            Btn_Sign.Click += Btn_Sign_Click;
+            // 
+            // Btn_Verify
+            // 
+            Btn_Verify.Location = new Point(188, 110);
+            Btn_Verify.Margin = new Padding(2, 1, 2, 1);
+            Btn_Verify.Name = "Btn_Verify";
+            Btn_Verify.Size = new Size(102, 22);
+            Btn_Verify.TabIndex = 60;
+            Btn_Verify.Text = "Verify";
+            Btn_Verify.UseVisualStyleBackColor = true;
+            Btn_Verify.Click += Btn_Verify_Click;
+            // 
+            // Rtb_SignatureKeyInput
+            // 
+            Rtb_SignatureKeyInput.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Rtb_SignatureKeyInput.Location = new Point(54, 26);
+            Rtb_SignatureKeyInput.Margin = new Padding(2, 1, 2, 1);
+            Rtb_SignatureKeyInput.Name = "Rtb_SignatureKeyInput";
+            Rtb_SignatureKeyInput.Size = new Size(211, 65);
+            Rtb_SignatureKeyInput.TabIndex = 57;
+            Rtb_SignatureKeyInput.Text = "";
+            // 
+            // Btn_BrowseSignatureKey
+            // 
+            Btn_BrowseSignatureKey.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Btn_BrowseSignatureKey.Location = new Point(273, 26);
+            Btn_BrowseSignatureKey.Margin = new Padding(2, 1, 2, 1);
+            Btn_BrowseSignatureKey.Name = "Btn_BrowseSignatureKey";
+            Btn_BrowseSignatureKey.Size = new Size(68, 22);
+            Btn_BrowseSignatureKey.TabIndex = 57;
+            Btn_BrowseSignatureKey.Text = "Browse";
+            Btn_BrowseSignatureKey.UseVisualStyleBackColor = true;
+            Btn_BrowseSignatureKey.Click += Btn_BrowseSignatureKey_Click;
+            // 
+            // Lbl_SignatureKeyInput
+            // 
+            Lbl_SignatureKeyInput.AutoSize = true;
+            Lbl_SignatureKeyInput.Location = new Point(12, 26);
+            Lbl_SignatureKeyInput.Margin = new Padding(2, 0, 2, 0);
+            Lbl_SignatureKeyInput.Name = "Lbl_SignatureKeyInput";
+            Lbl_SignatureKeyInput.Size = new Size(29, 15);
+            Lbl_SignatureKeyInput.TabIndex = 3;
+            Lbl_SignatureKeyInput.Text = "Key:";
+            // 
+            // Btn_CopySignatureResult
+            // 
+            Btn_CopySignatureResult.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Btn_CopySignatureResult.Location = new Point(575, 224);
+            Btn_CopySignatureResult.Margin = new Padding(2, 1, 2, 1);
+            Btn_CopySignatureResult.Name = "Btn_CopySignatureResult";
+            Btn_CopySignatureResult.Size = new Size(101, 22);
+            Btn_CopySignatureResult.TabIndex = 59;
+            Btn_CopySignatureResult.Text = "Copy Result";
+            Btn_CopySignatureResult.UseVisualStyleBackColor = true;
+            Btn_CopySignatureResult.Click += Btn_CopySignatureResult_Click;
+            // 
+            // Rtb_SignatureResult
+            // 
+            Rtb_SignatureResult.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Rtb_SignatureResult.Location = new Point(18, 253);
+            Rtb_SignatureResult.Margin = new Padding(2, 1, 2, 1);
+            Rtb_SignatureResult.Name = "Rtb_SignatureResult";
+            Rtb_SignatureResult.ReadOnly = true;
+            Rtb_SignatureResult.Size = new Size(664, 158);
+            Rtb_SignatureResult.TabIndex = 58;
+            Rtb_SignatureResult.Text = "";
+            // 
+            // Lbl_SignatureResult
+            // 
+            Lbl_SignatureResult.AutoSize = true;
+            Lbl_SignatureResult.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Lbl_SignatureResult.Location = new Point(18, 227);
+            Lbl_SignatureResult.Margin = new Padding(2, 0, 2, 0);
+            Lbl_SignatureResult.Name = "Lbl_SignatureResult";
+            Lbl_SignatureResult.Size = new Size(52, 20);
+            Lbl_SignatureResult.TabIndex = 57;
+            Lbl_SignatureResult.Text = "Result:";
+            // 
+            // Rtb_SignatureInput
+            // 
+            Rtb_SignatureInput.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Rtb_SignatureInput.Location = new Point(18, 253);
+            Rtb_SignatureInput.Margin = new Padding(2, 1, 2, 1);
+            Rtb_SignatureInput.Name = "Rtb_SignatureInput";
+            Rtb_SignatureInput.Size = new Size(664, 158);
+            Rtb_SignatureInput.TabIndex = 58;
+            Rtb_SignatureInput.Text = "";
+            // 
+            // Lbl_SignatureInput
+            // 
+            Lbl_SignatureInput.AutoSize = true;
+            Lbl_SignatureInput.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Lbl_SignatureInput.Location = new Point(18, 227);
+            Lbl_SignatureInput.Margin = new Padding(2, 0, 2, 0);
+            Lbl_SignatureInput.Name = "Lbl_SignatureInput";
+            Lbl_SignatureInput.Size = new Size(52, 20);
+            Lbl_SignatureInput.TabIndex = 57;
+            Lbl_SignatureInput.Text = "Input:";
+            // 
             // RSAControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -525,6 +774,12 @@
             Gb_TextInput.PerformLayout();
             Gb_KeyInput.ResumeLayout(false);
             Gb_KeyInput.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            tabPage3.PerformLayout();
+            Gb_SignatureTextInput.ResumeLayout(false);
+            Gb_SignatureTextInput.PerformLayout();
+            Gb_SignatureKeyInput.ResumeLayout(false);
+            Gb_SignatureKeyInput.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -533,6 +788,7 @@
         private TabControl TbCtrl_RSAControl;
         private TabPage tabPage1;
         private TabPage tabPage2;
+        private TabPage tabPage3;
         private GroupBox Gb_ViewGeneratedKeys;
         private GroupBox Gb_SaveKeys;
         private GroupBox Gb_KeyPairGenerator;
@@ -567,5 +823,23 @@
         private Label Lbl_SrcTextInput;
         private Button Btn_Paste;
         private RichTextBox Rtb_SrcTextInput;
+        private GroupBox Gb_SignatureTextInput;
+        private Button Btn_BrowseSignatureText;
+        private Label Lbl_ImportFileSignature;
+        private Button Btn_ClearSignatureInputText;
+        private Label Lbl_SignatureTextInput;
+        private Button Btn_PasteSignature;
+        private RichTextBox Rtb_SignatureTextInput;
+        private GroupBox Gb_SignatureKeyInput;
+        private Button Btn_Verify;
+        private Button Btn_Sign;
+        private RichTextBox Rtb_SignatureKeyInput;
+        private Button Btn_BrowseSignatureKey;
+        private Label Lbl_SignatureKeyInput;
+        private Button Btn_CopySignatureResult;
+        private RichTextBox Rtb_SignatureResult;
+        private Label Lbl_SignatureResult;
+        private RichTextBox Rtb_SignatureInput;
+        private Label Lbl_SignatureInput;
     }
 }
